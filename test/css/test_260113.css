@@ -55,3 +55,20 @@ strong{
     font-weight: 800;
     color: #e83828;
 }
+
+.esg h2{
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    margin: 100px 0 0px 0;
+}
+.esg h3{
+    font-weight: 700;
+    font-size: 24px;
+    color: #1d1d1d;
+    margin: 36px 0 14px 0;
+}
+.esg strong{
+    font-weight: 400;
+    color: #003b83;
+}
