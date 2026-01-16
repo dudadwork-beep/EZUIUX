@@ -1,0 +1,82 @@
+@import url(pretendard.css);
+/************** Start : 태그 초기화 **************/
+h1, h2, h3, h4, h5, h6{
+    font-weight: inherit;
+    font-size: inherit;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+a{
+    color: inherit;
+    text-decoration: none; /*밑줄삭제*/
+}
+ul,ol,li{
+    list-style: none; /*앞에 도형 제거*/
+}
+/************** End : 태그 초기화 **************/
+/************** Start : 기본 스타일 **************/
+body{
+    font-family: 'pretendard';
+    font-size: 17px;
+    font-weight: 400;
+    color: #3d3d3d;
+    line-height: 1.5;
+}
+.wrapper{
+    width: 1260px;
+    margin: 0 auto;
+}
+/************** End : 기본스타일 **************/
+.recruit h2{
+    font-size: 40px;
+    font-weight: 700;
+    color: #1d1d1d;
+    text-align: center;
+    margin: 80px 0 48px 0;
+}
+.recruit .tit{
+    background: url(../images/ss_tit.jpg) no-repeat center center / cover; /**이미지**/
+    color: #fff;
+    height: 423px;
+    text-align: center;
+}
+.recruit .tit h3{
+    font-size: 32px;
+    font-weight: 700;
+    padding: 130px 0 22px 0;
+}
+.recruit .tit a{
+    display: inline-block; /**a는 보자마자 블럭주기. -> 어라 ? 너무 크다 인라인 블럭**/
+    border: 1px solid #fff; /** 1픽셀,  선, 흰색**/
+    padding: 4px 27px;
+    border-radius: 30px;
+}
+.recruit .list{
+    margin: 40px 0 0 0;
+}
+.recruit .list ul{
+    display: flex;
+}
+.recruit .list ul li{
+    width: 50%; /** 감싸는 ul 넓이의 절반 **/
+}
+.recruit .list ul li a{
+    display: block;
+    height: 190px;
+    background-color: #63aadb;
+    color: #fff;
+}
+.recruit .list ul li.bg2 a{
+    background-color: #0e3058;
+}
+.recruit .list ul li h3{
+    font-size: 32px;
+    font-weight: 700;
+    padding: 60px 15px 0 57px;
+}
+.recruit .list ul li p{
+    padding: 0 0 0 57px;
+}
