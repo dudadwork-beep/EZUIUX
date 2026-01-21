@@ -1,4 +1,4 @@
-/*태그의 초기화*/
+/*태그의 초기화 - 260121 수정*/
 h1,h2,h3,h4,h5,h6{
     font-size: inherit;
     font-weight: inherit;
@@ -9,6 +9,12 @@ a{
 }
 ul,ol,li{
     list-style: none;
+}
+strong{ /* 굵기 */
+    font-weight: inherit;
+}
+em,address{ /* 기울어진 글자 바르게 */
+    font-style: normal;
 }
 *{
     margin: 0;
@@ -26,4 +32,8 @@ body{
 .wrapper{
     width: 1260px;
     margin: 0 auto; /*화면 가운데 정렬*/
+}
+#wrap{
+    /* 1260+30+30 = 1320 */
+    min-width: 1320px;
 }
