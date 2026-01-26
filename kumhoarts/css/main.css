@@ -125,6 +125,7 @@
     padding: 151px 0 161px 0;
     display: flex;
     justify-content: space-between;
+    position: relative;/* more 정렬의 기준 */
 }
 .community .notice .tit h3{
     color: #fff;
@@ -163,7 +164,22 @@
 .community .notice .list ul li a:hover span{
     color: #FCF0D6;
 }
+.community .notice .more{
+    position: absolute; /* notice를 기준으로 정렬 */
+    left: 0;
+    top: 340px;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    padding: 12px 40px;
+}
+.community .notice .more:hover{
+    background-color: #fff;
+    color: #710004;
+}
 
+.community .youtube{
+    position: relative; /* more 정렬의 기준 */
+}
 .community .youtube .tit h3{
     font-weight: 400;
     color:#fff
@@ -211,8 +227,18 @@
     margin: 10px 0 0 0;
     color: #191E26;
 }
-
-
+.community .youtube .more{
+    position: absolute; /* youtube 기준으로 정렬 */
+    right: 0;
+    top: 36px;
+    border: 1px solid #fff;
+    border-radius: 30px;
+    padding: 12px 40px;
+}
+.community .youtube .more:hover{
+ background-color: #fff;
+    color: #710004;
+}
 
 .footer{
     border-top: 1px solid rgba(69, 75, 82, 0.35) ;
