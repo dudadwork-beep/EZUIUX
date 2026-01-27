@@ -79,10 +79,18 @@
 .f_nav ul{
     display: flex;
     gap: 0 30px
+
+}
+.f_nav ul li{
+    position: relative; /* before 정렬의 기준 */
 }
 .f_nav ul li::before{
-    content: "";/* 가상선택자 필수 */
-}
-.f_nav ul li::after{
-    content: "";/* 가상선택자 필수 */
+    content: "";/* before/after 가상선택자 필수 */
+    /* before/after는 반드시 asolute로 제어 */
+    position: absolute; /* li를 기준으로 정렬 */
+    left: -15px;
+    top: 3px;
+    width: 1px;
+    height: 19px;
+    background-color: red;
 }
