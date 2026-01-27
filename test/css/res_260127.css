@@ -1,3 +1,159 @@
-img{
+@import url(commons.css);
+@import url(pretendard.css);
+
+.biz{
+    margin: 100px;
+}
+.biz .group{
+    display: flex; /*tit-group 좌우배치*/
+    justify-content: space-between;
+}
+/* .group.art group이라는 클래스 명과 art라는 클래스명을 동시에 갖는 요소 */
+.biz .group.art{
+    flex-direction: row-reverse;
+    margin: 101px 0 0 0;
+}
+.biz .group .tit{
+    width: 510px;
+}
+.biz .group .tit h2{
+    color: #AF143C;
+}
+.biz .group .tit .sub_tit{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    color: #191E26;
+    margin: 13px 0 23px 0;
+}
+.biz .group .tit .sub_tit strong{
+    color: #AF143C;
+}
+.biz .group .tit .btn_wrap{
+    margin: 48px 0 0 0;
+    display: flex; /* a를 좌우로 배치 */
+    gap: 6px 6px;
+    flex-wrap: wrap;/* 여러줄 허용 */
+}
+.biz .group .tit .btn_wrap a{
+    display: block;
+    border: 1px solid #AF143C;
+    color: #AF143C;
+    padding: 13px 35px;
+    border-radius: 30px;
+    white-space: nowrap; /* 줄바꿈 금지 */
+}
+/* a태그 중에서 active 클래스를 준 a */
+.biz .group .tit .btn_wrap a.active{
+    background-color: #AF143C;
+    color: #fff;
+}
+.biz .group .photo{
+    overflow: hidden;
+    width: 618px;
+    height: 487px;
+    border-radius: 20px;
+}
+.biz .group .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+@media screen and (max-width:768px){ /* 브라우저 넓이가 768 이하일 때 */
+                                  
+                                    .biz .group{
+                                        display: block; /*felx 해제*/
+                                        /* justify-content: space-between; -- 이 값은 felx 일때만 적용X 그래서 나둬도 됌 */
+                                    }
+                                    /* .group.art group이라는 클래스 명과 art라는 클래스명을 동시에 갖는 요소 */
+                                    .biz .group.art{
+                                        /* flex-direction: row-reverse; -- 이 값은 felx 일때만 적용X 그래서 나둬도 됌 */
+                                        margin: 87px 0 0 0;
+                                    }
+                                    .biz .group .tit{
+                                        width: auto;
+                                    }
+                                    .biz .group .tit .sub_tit{
+                                        font-size: 28px;
+                                        margin: 15px 0 15px 0;
+                                    }                                  
+                                    .biz .group .tit .btn_wrap{
+                                        margin: 43px 0 43px 0;                                        
+                                    }
+                                    .biz .group .tit .btn_wrap a{
+                                        padding: 12px 27px;   
+                                    }
+                                    .biz .group .photo{
+                                        width: auto;
+                                        height: 141px;
+                                        border-radius: 10px;
+                                    }
+}/*@media*/
+
+
+.photo_wrap{
+    margin: 100px 0;
+}
+.photo_wrap h2{
+    margin: 50px 0 10px 0;
+    font-size: 24px;
+    font-weight: 700;
+    color: #191E26;
+}
+.photo_wrap .photo_hfix{
+    overflow: hidden;
+    border: 2px solid #AF143C;
+    border-radius: 30px;
+    height: 840px;
+}
+.photo_wrap .photo_hfix img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+@media screen and (max-width:768px){
+                                    .photo_wrap .photo_hfix{
+                                        height: 300px;
+    }
+}/*@media*/
+.photo_wrap .photo_resize{
+    overflow: hidden;
+    border: 2px solid #AF143C;
+    border-radius: 30px;
+    height: 840px;
+}
+.photo_wrap .photo_resize img{
+    width: 100%;
+    height: 100%;
+}
+@media screen and (max-width:768px){
+    .photo_wrap .photo_resize{
+        height: 200px;
+}
+}/*@media*/
+.photo_wrap .photo_font{
+    overflow: hidden;
+    border: 2px solid #AF143C;
+    border-radius: 30px;
+    font-size: 0;
+    line-height: 0;
+}
+.photo_wrap .photo_font img{
+    width: 100%;
+    /* 넓이나 높이만 주면 나머지는 비율에 맞게 따라옴 */
+}
+.photo_wrap .photo_all{ /* 보통 이걸 많이 씀 */
+    overflow: hidden;
+    border: 2px solid #AF143C;
+    border-radius: 30px;
+}
+.photo_wrap .photo_all img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: top;
+}
+.test img{
     width: 324px;
 }
