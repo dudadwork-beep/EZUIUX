@@ -18,6 +18,7 @@ body{
 #wrap{
     /* 1260+100+100 = 1460 */
     min-width: 1460px;
+    position: relative; /*header 정렬의 기준 */
 }
 @media screen and (max-width:768px){ /*브라우저 넓이가 768이하일때 (768부터~) */ /*★ 반응형 모바일*/
             body{
