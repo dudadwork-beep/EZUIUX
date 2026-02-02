@@ -61,7 +61,7 @@
                         height: 56px;
                     }
                     .header .wrapper{
-                        margin: 0; /* 오른쪽 여백삭제*/
+                        margin-right: 0; /* 오른쪽 여백삭제*/
                     }
                     .header .logo a img{
                         width: 144px;
@@ -381,15 +381,45 @@
     height: 417px;
     background: url(../images/tour01.jpg) no-repeat center center / cover;
     color: #fff;
+    text-align: center;
+    padding: 0 0 46px 0;
 }
 .tour .list ul li.tour02 a{
-    background: url(../images/tour02.jpg);
+    background-image: url(../images/tour02.jpg);
 }
 .tour .list ul li.tour03 a{
-    background: url(../images/tour03.jpg);
+    background-image: url(../images/tour03.jpg);
 }
 .tour .list ul li.tour04 a{
-    background: url(../images/tour04.jpg);
+    background-image: url(../images/tour04.jpg);
+}
+.tour .list ul li.active a{
+    text-align: left;
+    padding: 0 40px 40px 40px;
+}
+.tour .list ul li.active a h3{
+    font-size: 32px;
+}
+.tour .list ul li.active a p{
+    display: block;
+    margin: 24px 0 0 0;
+    position: relative; /* after 기준 */
+}
+.tour .list ul li a p::after{ /*화살표 아이콘*/
+    content: "";
+    position: absolute; /* p태그를 기준으로 정렬*/
+    right: -3px;
+    bottom: 0;
+    width: 32px;
+    height: 32px;
+    background: url(../images/tour_more.svg) no-repeat center center / contain;
+}
+.tour .list ul li a h3{
+    font-size: 28px;
+    font-weight: 700;
+}
+.tour .list ul li a p{
+    display: none;/* 숨김 */
 }
 .tour .more{
     position: absolute; /* wrapper를 기준으로 정렬 */
@@ -435,7 +465,53 @@
                     }
                     .tour .list{
                         margin: 32px 0 0 0;
+                        overflow: auto; /*★*/
+                        /* list의 넓이보다 ul의 넓이가 작으면 스크롤바가 안생기고
+                            ul의 넓이가 더 넓으면 가로 스크롤바 생성 */
                     }
+                    .tour .list ul{ /*★*/
+                        width: 1048px;
+                        /* 
+                           250 * 4 = 1000
+                           16 * 3 = 48
+                           1000 + 48 = 1048
+                        */
+                    }
+                    .tour .list ul li{
+                        width:250px;
+                    }
+                    .tour .list ul li.active{ /* active 클라스가 있는 li */
+                        width: 250px;
+                    }
+                    .tour .list ul li a{
+                        height: 417px;
+                        text-align: left;
+                        padding: 0 24px 24px 24px;
+                    }
+                    .tour .list ul li.active a{
+                        padding: 0 24px 24px 24px;
+                    }
+                    .tour .list ul li.active a h3{
+                        font-size: 32px;
+                    }
+                    .tour .list ul li a p{
+                        display: block; /* 나타남 */
+                        margin: 24px 0 0 0;
+                    }
+                    .tour .list ul li a p br{
+                            display: none; /*줄 바꿈 삭제*/
+                    }
+                    .tour .list ul li.active a p{
+                        margin: 24px 0 0 0;
+                    }
+                    .tour .list ul li a p::after{ /*화살표 아이콘*/
+                        display: none;
+                    }
+                    .tour .list ul li a h3{
+                        font-size: 28px;
+                        font-weight: 700;
+                    }
+
                     .tour .more{
                         top: 60px;
                         border-radius: 50px;
@@ -466,6 +542,312 @@
                     }
 }/*@media*/
 
+.community{
+    background: url(../images/community_bg.jpg) no-repeat center center / cover ;
+    color: #fff;
+    padding: 162px 0 202px 0;
+}
+.community .wrapper{
+    display: flex; /* tit-group 좌우배치 */
+    justify-content: space-between;
+}
+.community .tit h2{
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.3;
+    margin: 0 0 18px 0;
+}
+.community .group{
+    display: flex; /* notice-service 좌우 */
+    gap: 0 24px;
+    align-items: flex-end; /* 아래를 기준으로 정렬 */
+}
+.community .group .notice{
+    width: 520px;
+    height: 436px;
+    border-radius: 20px;
+    background-color: rgba(0, 32, 94, 0.5);
+    padding: 40px 40px 0 40px;
+    /* 높이가 있으면 절대 아래 여백 안줌 (4곳의 여백을 모두 주지 않음) */
+    backdrop-filter:blur(10px);
+    position: relative; /*more 정렬의 기준*/
+}
+
+.community .group .notice h3{
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+}
+.community .group .notice .list{
+    margin: 82px 0 0 0;
+}
+.community .group .notice .list ul li{
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.community .group .notice .list ul li:first-child{
+    border-top: none; /* li 중에서 첫번째 li는 선이 없음 */
+}
+.community .group .notice .list ul li a{
+    display: flex; /* h4-span 좌우 배치 */
+    justify-content: space-between;
+    padding: 12px 0;
+}
+.community .group .notice .list ul li a h4{
+    width: calc(100% - 100px); /*★*/
+    /* h4의 넓이는 오른쪽에서 날짜가 들어갈 공간 빼고 나머지 전체 다 
+    1줄로 제한 */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.community .group .notice .list ul li a:hover h4{
+    color: #00205E;
+    font-weight: 700;
+}
+.community .group .notice .more{
+    position: absolute; /* notice 기준으로 */
+    right: 35px;
+    top: 45px;
+    width: 32px;
+    height: 32px;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    background: url(../images/more_on.svg) no-repeat center center / 8.17px;
+    /* background 사이즈에 넓이만 입력하면 높이는 알아서 들어감 */
+}
+/********** notice에 오버 했을때 ************/
+.community .group .notice:hover{
+    background-color: #fff;
+    color: #1d1d1d;
+}
+.community .group .notice:hover .list ul li{
+    border-top: 1px solid #ccc;
+}
+.community .group .notice:hover .list ul li:first-child{
+    border-top: none; /* li 중에서 첫번째 li는 선이 없음 */
+}
+.community .group .notice:hover .more{
+    border-color: #00205E;
+    background-color: #00205E;
+    /* background 사이즈에 넓이만 입력하면 높이는 알아서 들어감 */
+}
+
+.community .group .service{
+    width: 311px;
+    /* li의 넓이 x 2 + 여백 = 311px*/
+}
+.community .group .service ul{
+    display: flex; /* li를 좌우로 배치 */
+    flex-wrap: wrap; /* 여러줄 허용 */ /*★*/
+    gap: 14px 12px; /* 위아래-좌우 여백 */ 
+}
+.community .group .service ul li{
+    width: calc(50% - 12px);
+    /*
+        100% / 한줄에 표시될 li의 갯수 - 한줄의 중간 여백의 합 / 한줄에 표시될 li의 갯수
+        = 100% / 2 - 24 / 2
+        = 50% -12px
+    */
+}
+.community .group .service ul li a{
+    display: block;
+    height: 150px;
+    background-color: rgba(0, 32, 94, 0.5);
+    border-radius: 20px;
+    backdrop-filter:blur(10px);
+    padding: 22px 0 0 22px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 1.3;
+    position: relative; /* after 정렬의 기준 */
+}
+.community .group .service ul li a::after{
+    content: "";
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.community .group .service ul li.icon01 a::after{
+    background-image: url(../images/service01.svg);
+}
+.community .group .service ul li.icon02 a::after{
+    background-image: url(../images/service02.svg);
+}
+.community .group .service ul li.icon03 a::after{
+    background-image: url(../images/service03.svg);
+}
+.community .group .service ul li.icon04 a::after{
+    background-image: url(../images/service04.svg);
+}
+/**********마우스 오버 했을때***********/
+.community .group .service ul li a:hover{
+    background-color: #fff;
+    color: #1d1d1d;
+}
+.community .group .service ul li.icon01 a:hover:after{
+    background-image: url(../images/service01_on.svg);
+}
+.community .group .service ul li.icon02 a:hover::after{
+    background-image: url(../images/service02_on.svg);
+}
+.community .group .service ul li.icon03 a:hover::after{
+    background-image: url(../images/service03_on.svg);
+}
+.community .group .service ul li.icon04 a:hover::after{
+    background-image: url(../images/service04_on.svg);
+}
+@media screen and (max-width:768px){
+    .community{
+        padding: 100px 0 84px 0;
+    }
+    .community .wrapper{
+        display: block; /*flex 해제*/
+    }
+    .community .tit h2{
+        font-size: 28px;
+        margin: 0 0 6px 0;
+    }
+    .community .tit h2 br,
+    .community .tit p br{
+        display: none;
+    }
+    .community .group{
+        margin: 28px 0 0 0;
+        display: block; /*flex 해제*/
+       /* gap: 0 24px; --flex가 해제되면 동작x
+        align-items: flex-end;*/
+    }
+    .community .group .notice{
+        width: auto;
+        height: auto;
+        padding: 30px 28px 30px 28px;
+        /* 높이가 있으면 절대 아래 여백 안줌 (4곳의 여백을 모두 주지 않음) */
+        backdrop-filter:blur(10px);
+        position: relative; /*more 정렬의 기준*/
+    }
+    
+    .community .group .notice h3{
+        font-size: 20px;
+    }
+    .community .group .notice .list{
+        margin: 20px 0 0 0;
+    }
+    .community .group .notice .list ul li a{
+        padding: 12px 0;
+    }
+    .community .group .notice .more{
+        right: 25px;
+        top: 25px;
+        width: 28px;
+        height: 28px;
+        background-size: 6.64px;
+    }
+   
+    .community .group .service{
+        width: auto;
+        margin: 16px 0 0 0;
+    }
+    .community .group .service ul{
+        gap: 16px 16px; /* 위아래-좌우 여백 */ 
+    }
+    .community .group .service ul li{
+        width: calc(50% - 8px);
+        /*
+            100% / 한줄에 표시될 li의 갯수 - 한줄의 중간 여백의 합 / 한줄에 표시될 li의 갯수
+            = 100% / 2 - 16 / 2
+            = 50% -8px
+        */
+    }
+    .community .group .service ul li a{
+        height: 82px;
+        border-radius: 20px;
+        padding: 28px 0 0 28px;
+        font-size: 20px;
+    }
+    .community .group .service ul li a::after{
+        right: 26px;
+        bottom: 26px;
+        width: 26px;
+        height: 26px;
+        background-size: contain;
+    }
+    
+}/* @media */
+
+
 .footer{
-    margin: 500px 0 0 0;
+    padding: 76px 0 76px 0;
+    color: #666;
+}
+.footer .f_nav ul{
+    display: flex; /*li 정렬*/
+    gap: 2px 19px;
+    flex-wrap: wrap; /* 모바일 때문에 여러줄 허용 */
+}
+.footer .f_nav ul li{
+    position: relative; /* after 정렬의 기준 */
+}
+.footer .f_nav ul li::after{
+    content: "";
+    position: absolute;
+    right: -10px;
+    top: 6px;
+    width: 1px;
+    height: 12px;
+    background-color: rgba(204, 204, 204, 1);
+}
+.footer .f_nav ul li:last-child:after{
+    display: none;/* 마지막 li의 선 삭제 */
+}
+.footer .f_info{
+    display: flex;
+    gap: 2px 18.5px;
+    flex-wrap: wrap; /* 모바일 때문에 여러줄 허용 */
+    margin: 25px 0 26px 0;
+}
+.footer .copyright .license{
+    font-size: 15px;
+    /*color: #666;*/
+    text-decoration: underline; /*밑줄*/
+}
+@media screen and (max-width:768px){
+    .footer{
+        padding: 28px 0 28px 0;
+        color: #666;
+    }
+    .footer .f_nav ul{
+        display: flex; /*li 정렬*/
+        gap: 2px 19px;
+        flex-wrap: wrap; /* 모바일 때문에 여러줄 허용 */
+    }
+    .footer .f_nav ul li{
+        position: relative; /* after 정렬의 기준 */
+    }
+    .footer .f_nav ul li::after{
+        content: "";
+        position: absolute;
+        right: -10px;
+        top: 6px;
+        width: 1px;
+        height: 12px;
+        background-color: rgba(204, 204, 204, 1);
+    }
+    .footer .f_nav ul li:last-child:after{
+        display: none;/* 마지막 li의 선 삭제 */
+    }
+    .footer .f_info{
+        display: flex;
+        gap: 2px 18.5px;
+        flex-wrap: wrap; /* 모바일 때문에 여러줄 허용 */
+        margin: 25px 0 26px 0;
+    }
+    .footer .copyright .license{
+        font-size: 15px;
+        /*color: #666;*/
+        text-decoration: underline; /*밑줄*/
+    }
 }
