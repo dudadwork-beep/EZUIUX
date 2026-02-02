@@ -26,10 +26,14 @@
         })
         $('.btn_wrap button.red').on('click', function(){
             console.log('빨간버튼 클릭')
+            $('h1').removeClass()
+            //removeClass는 클래스명을 안주면 싹다 지워버림.
             $('h1').addClass('red')
         })
         $('.btn_wrap button.blue').on('click', function(){
             console.log('파란버튼 클릭')
+            $('h1').removeClass()
+            //removeClass는 클래스명을 안주면 싹다 지워버림.
             $('h1').addClass('blue')
         })
     </script>
