@@ -16,6 +16,15 @@ strong{ /* 굵기 */
 em,address{ /* 기울어진 글자 바르게 */
     font-style: normal;
 }
+button{
+    border: none;
+    background: none;
+    font-family: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    line-height: inherit;
+    cursor: pointer;
+}
 *{
     margin: 0;
     padding: 0;
