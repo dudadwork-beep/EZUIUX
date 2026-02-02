@@ -95,7 +95,6 @@
     z-index: 0;
     width: 100%;
     height: 100%;
-    background-color: #f7f7f7; /*.visual position: relative; ~ .visual::before 까지 만약 색이 들어갔을때 */ 
 }
 .visual .wrapper{
     height: 900px;
