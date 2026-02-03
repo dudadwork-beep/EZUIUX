@@ -437,7 +437,6 @@
     display: block;
     margin: 24px 0 0 0;
     position: relative; /* after 기준 */
-    white-space: nowrap; /* 줄바꿈 금지 */
 }
 .tour .list ul li a p::after{ /*화살표 아이콘*/
     content: "";
@@ -454,6 +453,7 @@
 }
 .tour .list ul li a p{
     display: none;/* 숨김 */
+    white-space: nowrap; /* 줄바꿈 금지 */
 }
 .tour .more{
     position: absolute; /* wrapper를 기준으로 정렬 */
