@@ -1,0 +1,198 @@
+@import url(pretendard.css);
+@import url(commons.css);
+
+.header{
+    position: fixed; /* 무조건 body와 정렬 */
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 80px;
+    background-color: #1d1d1d;
+    color: #fff;
+}
+.header h1{
+    text-align: center;
+    line-height: 80px;
+    font-size: 20px;
+    font-weight: 700;
+}
+.header.fixed{
+    background-color: #fff;
+    color: #1d1d1d;
+    border-bottom: 1px solid #ccc;
+    box-shadow: 0 0 5px rgba(0,0,0, 0.1);
+}
+
+
+/* 좌우로 왔다가 갔다하면 틈이 많이 벌어짐. */
+.tour{
+    margin: 100px 0 100px 0;
+}
+.tour .list ul{
+    display: flex;
+    justify-content: space-between;
+}
+.tour .list ul li{
+    width: 190px;
+    overflow: hidden; /* p태그가 넓이보다 넘칠경우 짤라버림 */
+    transition: 1s;
+}
+.tour .list ul li.active{
+    width: 654px;
+}
+.tour .list ul li a{
+    height: 426px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: #fff;
+    padding: 0 30px 30px 30px;
+}
+.tour .list ul li:nth-child(1) a{
+    background-color: #0051C2;
+}
+.tour .list ul li:nth-child(2) a{
+    background-color: #00205E;
+}
+.tour .list ul li:nth-child(3) a{
+    background-color: #3CA9EA;
+}
+.tour .list ul li:nth-child(4) a{
+    background-color: #019C9E;
+}
+.tour .list ul li a h2{
+    font-size: 24px;
+    font-weight: 700;
+}
+.tour .list ul li a p{
+    display: none;
+    white-space: nowrap;
+}
+.tour .list ul li.active a p{
+    display: block;
+    margin: 13px 0 0 0;
+}
+@media screen and (max-width:768px){
+                .tour .list ul{
+                    flex-direction: column;
+                    gap: 1px 0;
+                }
+                .tour .list ul li{
+                    width: auto;
+                    overflow: visible; /* 안짤리고 다나옴 */
+                }
+                .tour .list ul li.active{
+                    width: auto;
+                }
+                .tour .list ul li a{
+                    height: auto;
+                    display: flex;
+                    padding: 30px 16px 30px 16px;
+                }
+                .tour .list ul li a p{
+                    display: block; /* none 취소 */
+                    white-space: normal; /* nowrap 취소 */
+                    margin: 13px 0 0 0;
+                }
+    }/*@media*/  /*전체 다 안펼쳐짐*/
+
+/* ---------- */
+
+/* 좌우로 왔다가 갔다하면 틈이 많이 벌어지지않음. */
+
+.culture{
+    margin: 100px 0 100px 0;
+}
+.culture .list ul{
+    display: flex;
+    gap: 0 12px;
+}
+.culture .list ul li{
+    flex: 1 1 0%;
+    overflow: hidden; /* p태그가 넓이보다 넘칠경우 짤라버림 */
+    transition: 1s;
+}
+.culture .list ul li.active{
+    flex: 3.4 1 0%;
+}
+.culture .list ul li a{
+    display: block;
+    height: 426px;
+    color: #fff;
+    position: relative;/* txt 정렬의 기준 */
+}
+.culture .list ul li:nth-child(1) a{
+    background-color: #0051C2;
+}
+.culture .list ul li:nth-child(2) a{
+    background-color: #00205E;
+}
+.culture .list ul li:nth-child(3) a{
+    background-color: #3CA9EA;
+}
+.culture .list ul li:nth-child(4) a{
+    background-color: #019C9E;
+}
+.culture .list ul li a .txt{
+    position: absolute; /* a를 기준으로 정렬 */
+    left: 30px;
+    bottom: -40px;
+    transition: 0.3s;
+}
+.culture .list ul li.active a .txt{
+    bottom: 30px;   
+}
+.culture .list ul li a h2{
+    font-size: 24px;
+    font-weight: 700;
+}
+.culture .list ul li a p{
+    /* display: none -> block으로 바뀌는 요소는 transition 불가
+        안보였다가 보이는걸 자연스럽게 하고 싶으면 opacity가 변경되어야 함. */
+    /* display: none; */
+    opacity: 0;
+    white-space: nowrap;
+    margin: 13px 0 0 0;
+
+    transition: 0.3s;
+}
+.culture .list ul li.active a p{
+    opacity: 1;
+}
+
+@media screen and (max-width:768px){
+                .culture .list{
+                    overflow-x: auto;
+                    /* ul이 나보다 넓이가 넓으면 스크롤바를 생성 */
+                }
+                .culture .list ul{
+                    gap: 0 16px;
+                    width: 1000px;
+                }
+                .culture .list ul li.active{
+                    flex: 1 1 0%;
+                }
+                .culture .list ul li a{
+                    height: 300px;
+                    padding: 30px 16px 0 16px;
+                }
+                .culture .list ul li a .txt{
+                    /* absolut 해제 */
+                    position: relative; 
+                    left: auto; /*해제*/
+                    bottom: auto; /*해제*/
+                }
+                .culture .list ul li.active a .txt{
+                    bottom: auto;  /*해제*/  
+                }
+                .culture .list ul li a p{
+                    opacity: 1;
+                    white-space: normal; /*nowrap 취소*/
+                }
+                
+}/*@media*/
+
+body{
+    margin: 0 0 1000px 0;
+}
