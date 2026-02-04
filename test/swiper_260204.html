@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--외부 라이브러리 파일 먼저 연결-->
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/swiper-bundle.min.js"></script>
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    
+    <!--내가 만든 파일을 연결-->
+    <link rel="stylesheet" href="css/swiper_260204.css">
+    <script src="js/swiper_260204.js"></script>
+    <title>swiper 팝업</title>
+</head>
+<body>
+    <div class="wrap">
+        <section class="visual">
+            <div class="swiper">
+                <ul class="swiper-wrapper">
+                    <li class="swiper-slide  bg1">
+                        <div class="wrapper">
+                            <h3>Realizing Patient-Centered Care</h3>
+                            <p>We are committed to providing medical services that prioritize each patient's unique experience – ensuring personalized, respectful,and collaborative care at every step.</p>
+                        </div>
+                    </li>
+                    <li class="swiper-slide  bg2">
+                        <div class="wrapper">
+                            <h3>Where Your Journey Meets Compassionate Caret</h3>
+                            <p>International Healthcare Center (IHC) is a center dedicated solely to the care of patients at Samsung Medical Center (SMC), one of South Korea's leading hospitals. IHC opened in September 1995 and is the premier medical clinic for resident expatriates and patients in Korea.</p>
+                        </div>
+                    </li>
+                    <li class="swiper-slide  bg3">
+                        <div class="wrapper">
+                            <h3>Realizing Patient-Centered Care</h3>
+                            <p>We are committed to providing medical services that prioritize each patient's unique experience – ensuring personalized, respectful,and collaborative care at every step.</p>
+                        </div>
+                    </li>
+                </ul>
+                <div class="ctrl_wrap">
+                    <div class="paging"></div>  <!-- 컨트롤 요소는 swiper 안에 배치-->
+                    <button class="btn prev"><span class="sr-only">이전팝업보기</span></button>
+                    <button class="btn next"><span class="sr-only">다음팝업보기</span></button>
+                    <button class="btn stop"><span class="sr-only">팝업 일시정지</span></button>
+                    <button class="btn play"><span class="sr-only">팝업 다시시작</span></button>
+                </div><!--//ctrl_wrap-->
+            </div><!--//swiper-->
+        </section><!--//visual-->
+    </div>
+</body>
+</html>
