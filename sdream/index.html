@@ -15,7 +15,33 @@
 </head>
 <body>
     <div id="wrap">
-        <header class="header"></header>
+        <!-- 스크롤 내릴때 상단에 고정 : fixed 클래스 추가
+            header에 마우스를 올리면 배경이 흰색 바뀜 : mouseover 클래스 추가 -->
+        <header class="header fixed  over">
+                <div class="wrapper">
+                    <h1 class="logo"><a href="index.html"><span class="sr-only">꿈삼성꿈장학재단 Samsung Dream Scholarship Foundation</span></a></h1>
+                    <nav class="gnb">
+                        <button class="gnb_open"><span>메뉴열기</span></button>
+                        <div class="gnb_wrap">
+                            <ul>
+                                <li><a href="#n">사업소개</a></li>
+                                <li><a href="#n">장학신청</a></li>
+                                <li><a href="#n">정보마당</a></li>
+                                <li><a href="#n">재단소개</a></li>
+                            </ul>
+                        </div>
+                        <button class="gnb_close"><span>메뉴닫기</span></button>
+                    </nav>
+                    <div class="util">
+                        <a href="#n" class="mypage"><span class="sr-only">마이페이지</span></a>
+                        <!--마이페이지는 누르면 페이지 이동. 그래서 a-->
+                        <div class="lang">
+                            <button class="lang_open"><span class="sr-only">언어선택 열기</span></button>
+                            <!-- 지구본을 클릭하면 언어 선택이 하단에 뜸...페이지 이동X  이런건 버튼 -->
+                        </div>
+                    </div>
+                </div>
+        </header>
         <main class="container">
             <section class="visual">
                 <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
