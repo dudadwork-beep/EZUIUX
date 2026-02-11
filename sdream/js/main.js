@@ -66,4 +66,15 @@ $(document).ready(function(){
      },
     });
 
+    /**********************************
+     * top버튼을 클릭하면 상단으로 (맨위로) 스크롤 
+     ************************************* */
+    $('.footer .top').on('click', function(){
+        console.log('클릭')
+        // $(window).scrollTop(0)
+        $('html,body').animate({
+            scrollTop : 0
+        }, 500)
+    })
+
 })//$(document).ready
