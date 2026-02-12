@@ -1,0 +1,39 @@
+#wrap{
+    position: relative;
+}
+.wrapper{
+    width: 1260px;
+    margin: 0 auto;
+}
+html{
+    font-size: 10px;
+}
+body{
+    font-family: 'pretendard', sans-serif;
+    font-weight: var(--font-weight-default);
+    font-size: var(--font-size-default);
+    line-height: var(--line-height-default);
+    color: var(--color-defalut);
+}
+    /*1260 + (1260*0.04=50.4) + 50.4 */
+@media screen and (max-width:1361px){
+            .wrapper{
+                width: auto;
+                margin: 0 var(--wrapper-margin);
+                /* 무조건 브라우저 사이즈를 기준으로 4% */
+            }
+}/*@media*/
+
+:root{
+    --wrapper-margin: 4vw;
+    --font-size-default: clamp(1.6rem, 2.2vw, 1.7rem);
+    --font-size-tit:  clamp(2.8rem, 3.3vw, 4rem);
+    --font-weight-default: 400;
+    --font-weight-tit: 700;
+    --color-defalut: #3d3d3d;
+    --color-tit: #1d1d1d;
+    --color-main: #F980FF;
+    --color-sub: #58A1FF;
+    --line-height-default: 1.5;
+    --line-height-tit: 1.3;
+}
