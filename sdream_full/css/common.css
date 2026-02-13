@@ -16,14 +16,13 @@ body{
     margin: 0 auto; /* 화면에 가운데 정렬 */
 }
 #wrap{
-    /* 1260+30+30 = 1320 */
     position: relative;/* header 정렬의 기준 */
 }
-@media screen and (max-width:1320px){ /* 1260 + 30 + 30 = 1320 */
-                .wrapper{
-                    width: auto; /* 화면에 가운데 정렬 */
-                    margin: 0 30px;
-                }
+@media screen and (max-width:1320px){ /* 1260+30+30 = 1320 */
+    .wrapper{
+        width: auto;
+        margin: 0 30px;
+    }
 }
 @media screen and (max-width:768px){/* 브라우저 넓이가 768이하일때 (768부터~) */
                 body{
@@ -32,7 +31,6 @@ body{
                 .wrapper{
                     margin: 0 16px;
                 }
-         
 }/*@media*/
 
 /* html 표준때문에 입력해야하는 태그이지만 홈페이지에 나오지 않는
