@@ -1,0 +1,34 @@
+@font-face {
+    font-family: "Eulyoo";
+	font-style: normal;
+    font-weight: 400;
+    src: url('../fonts/Eulyoo1945-Regular.eot');
+    src:url('../fonts/Eulyoo1945-Regular.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Eulyoo1945-Regular.woff2') format('woff2'),
+    url('../fonts/Eulyoo1945-Regular.woff') format('woff');
+}
+@font-face {
+    font-family: "Eulyoo";
+	font-style: normal;
+    font-weight: 700;
+    src: url('../fonts/Eulyoo1945-SemiBold.eot');
+    src:url('../fonts/Eulyoo1945-SemiBold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/Eulyoo1945-SemiBold.woff2') format('woff2'),
+    url('../fonts/Eulyoo1945-SemiBold.woff') format('woff');
+}
+@font-face {
+    font-family: "NanumSquareNeo";
+    font-weight: 400;
+    src: 
+        url(../fonts/NanumSquareNeoTTF-bRg.eot?#iefix) format("embedded-opentype"),
+        url(../fonts/NanumSquareNeoTTF-bRg.woff2) format("woff2"),
+        url(../fonts/NanumSquareNeoTTF-bRg.woff) format("font-woff")
+}
+@font-face {
+    font-family: "NanumSquareNeo";
+    font-weight: 800;
+    src: 
+        url(../fonts/NanumSquareNeoTTF-dEb.eot?#iefix) format("embedded-opentype"),
+        url(../fonts/NanumSquareNeoTTF-dEb.woff2) format("woff2"),
+        url(../fonts/NanumSquareNeoTTF-dEb.woff) format("font-woff")
+}
