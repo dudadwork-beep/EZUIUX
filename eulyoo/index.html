@@ -3,15 +3,152 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 외부라이브러리 파일 연결 -->
+     <script src="js/jquery-3.7.1.min.js"></script>
+     <script src="js/swiper-bundle.min.js"></script>
+     <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+
+     <!-- 내가 만든 파일 연걸-->
     <link rel="stylesheet" href="css/main.css">
+    <script src="js/main.js"></script>
     <title>을유문화사</title>
 </head>
 <body>
-    <div class="wrapper">
-        1945년(을유년) 12월 1일, 광복의 감격과 의의를 기리며 ‘출판은 곧 건국 사업’이라는 사명감으로 첫발을 내디딘 을유문화사는 한국 현대사와 궤軌를 같이하며 한국 출판의 기틀을 다져 왔습니다.
-    한글의 원상회복을 위해 만든 첫 책 『가정 글씨 체첩』을 시작으로 『청록집』, 『삼대』, 『임꺽정』 등 광복 이후 우리 문학사의 중요한 흐름을 대표하는 책들을 출간했고, 출판사상 큰 의미를 갖는 『우리말 큰사전』과 『한국사』, 국내 문고판의 효시가 된 ‘을유문고’(1948~1988)와 ‘세계문학전집’(1959~1975)을 발간했습니다. 이후 『김약국의 딸들』을 선보인 ‘한국신작문학전집’과 ‘을유신서’ 등을 출간하며 현대 지성의 산실로서 그 명맥을 꾸준히 이어 왔습니다.
-    오늘날에는 『국화와 칼』, 『이기적 유전자』, 『러셀 서양철학사』, 『도시는 무엇으로 사는가』, 『글자 풍경』 등 단행본과 50년 만에 새롭게 선보이는 ‘을유세계문학전집’, 시공을 초월한 지적 성취를 담은 ‘을유사상고전’, 위대한 예술가들의 삶과 작품 세계를 조명한 ‘현대 예술의 거장’ 등 시리즈를 출간하고 있습니다. 앞으로도 저희는 법고창신法古創新의 정신을 지향하며 지금까지 쌓아 온 경험을 기반으로, 작가와 독자 사이의 충실한 가교 역할을 하면서 이 시대에 필요한 책을 만들고자 합니다.
-    </div>
-    
+    <div id="wrap">
+        <!-- header가 상단에 고정되면 fixed 클래스 (pc/mobile 공통)
+            pc버전에서 메뉴에 마우스를 올리면 menu_over
+            mobile 버전에서 메뉴를 클릭해서 열면 menu_open 클래스 추가 -->
+        <header class="header menu_over">
+            <h1 class="logo"><a href="index.html"><span  class="sr-only" >을유문화사</span></a></h1>
+            <nav class="gnb">
+                <button class="gnb_open">
+                    <span class="sr-only">메뉴열기</span>
+                    <svg width="18" height="14" viewBox="0 0 18 14" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 2V0H18V2H0ZM0 14V12H18V14H0ZM0 8V6H18V8H0Z"/>
+                    </svg>
+                </button>
+                <div class="gnb_wrap">
+                    <div class="gnb_logo"><span>을유문화사</span></div>
+                    <ul class="depth1">
+                        <!--pc버전에서는 over 클래스를 줌
+                            mobile버전에서는 open 클래스를 줌 -->
+                        <li>
+                            <a href="#n"><span>을유문화사</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>을유1945</span></a></li>
+                                <li><a href="#n"><span>출판사 소개</span></a></li>
+                                <li><a href="#n"><span>인사말</span></a></li>
+                                <li><a href="#n"><span>아카이브</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>콘텐츠</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>스테디셀러</span></a></li>
+                                <li><a href="#n"><span>전체 도서</span></a></li>
+                                <li><a href="#n"><span>작가 소개</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>을유소식</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>을유스토어</span></a></li>
+                                <li><a href="#n"><span>새소식</span></a></li>
+                                <li><a href="#n"><span>자료실</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="#n"><span>독자참여</span></a>
+                            <ul class="depth2">
+                                <li><a href="#n"><span>원고 투고</span></a></li>
+                                <li><a href="#n"><span>1:1 문의</span></a></li>
+                            </ul>
+                        </li>
+                    </ul><!--depth1-->
+                    <button class="gnb_close">
+                        <span>메뉴 닫기</span>
+                        <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1.4 14L0 12.6L5.6 7L0 1.4L1.4 0L7 5.6L12.6 0L14 1.4L8.4 7L14 12.6L12.6 14L7 8.4L1.4 14Z"/>
+                        </svg>
+                    </button>
+                </div> <!--gnb_wrap-->
+                <div class="gnb_bg"></div><!--메뉴변경-->
+            </nav>
+            <div class="util">
+                <div class="search">
+                    <button class="search_open">
+                        <span class="sr-only">검색열기</span>
+                        <svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M8.87624 17.7525C6.39545 17.7525 4.29587 16.8933 2.57752 15.175C0.859175 13.4566 0 11.357 0 8.87624C0 6.39545 0.859175 4.29587 2.57752 2.57752C4.29587 0.859175 6.39545 0 8.87624 0C11.357 0 13.4566 0.859175 15.175 2.57752C16.8933 4.29587 17.7525 6.39545 17.7525 8.87624C17.7525 9.87767 17.5932 10.8222 17.2745 11.7098C16.9559 12.5974 16.5235 13.3826 15.9772 14.0654L23.6245 21.7127C23.8748 21.963 24 22.2816 24 22.6686C24 23.0555 23.8748 23.3741 23.6245 23.6245C23.3741 23.8748 23.0555 24 22.6686 24C22.2816 24 21.963 23.8748 21.7127 23.6245L14.0654 15.9772C13.3826 16.5235 12.5974 16.9559 11.7098 17.2745C10.8222 17.5932 9.87767 17.7525 8.87624 17.7525ZM8.87624 15.0213C10.5832 15.0213 12.0341 14.4239 13.229 13.229C14.4239 12.0341 15.0213 10.5832 15.0213 8.87624C15.0213 7.16927 14.4239 5.71835 13.229 4.52347C12.0341 3.32859 10.5832 2.73115 8.87624 2.73115C7.16927 2.73115 5.71835 3.32859 4.52347 4.52347C3.32859 5.71835 2.73115 7.16927 2.73115 8.87624C2.73115 10.5832 3.32859 12.0341 4.52347 13.229C5.71835 14.4239 7.16927 15.0213 8.87624 15.0213Z"/>
+                        </svg>
+                    </button>
+                </div><!--search-->
+                <a href="#n" class="mypage">
+                    <span class="sr-only">마이페이지</span>
+                    <svg width="25" height="25" viewBox="0 0 25 25" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8.08594 10.6641C6.86198 9.4401 6.25 7.96875 6.25 6.25C6.25 4.53125 6.86198 3.0599 8.08594 1.83594C9.3099 0.611979 10.7812 0 12.5 0C14.2188 0 15.6901 0.611979 16.9141 1.83594C18.138 3.0599 18.75 4.53125 18.75 6.25C18.75 7.96875 18.138 9.4401 16.9141 10.6641C15.6901 11.888 14.2188 12.5 12.5 12.5C10.7812 12.5 9.3099 11.888 8.08594 10.6641ZM0 21.875V20.625C0 19.7396 0.227865 18.9258 0.683594 18.1836C1.13932 17.4414 1.74479 16.875 2.5 16.4844C4.11458 15.6771 5.75521 15.0716 7.42188 14.668C9.08854 14.2643 10.7812 14.0625 12.5 14.0625C14.2188 14.0625 15.9115 14.2643 17.5781 14.668C19.2448 15.0716 20.8854 15.6771 22.5 16.4844C23.2552 16.875 23.8607 17.4414 24.3164 18.1836C24.7721 18.9258 25 19.7396 25 20.625V21.875C25 22.7344 24.694 23.4701 24.082 24.082C23.4701 24.694 22.7344 25 21.875 25H3.125C2.26562 25 1.52995 24.694 0.917969 24.082C0.30599 23.4701 0 22.7344 0 21.875ZM3.125 21.875H21.875V20.625C21.875 20.3385 21.8034 20.0781 21.6602 19.8438C21.5169 19.6094 21.3281 19.4271 21.0938 19.2969C19.6875 18.5938 18.2682 18.0664 16.8359 17.7148C15.4036 17.3633 13.9583 17.1875 12.5 17.1875C11.0417 17.1875 9.59635 17.3633 8.16406 17.7148C6.73177 18.0664 5.3125 18.5938 3.90625 19.2969C3.67188 19.4271 3.48307 19.6094 3.33984 19.8438C3.19661 20.0781 3.125 20.3385 3.125 20.625V21.875ZM14.707 8.45703C15.319 7.84505 15.625 7.10938 15.625 6.25C15.625 5.39062 15.319 4.65495 14.707 4.04297C14.0951 3.43099 13.3594 3.125 12.5 3.125C11.6406 3.125 10.9049 3.43099 10.293 4.04297C9.68099 4.65495 9.375 5.39062 9.375 6.25C9.375 7.10938 9.68099 7.84505 10.293 8.45703C10.9049 9.06901 11.6406 9.375 12.5 9.375C13.3594 9.375 14.0951 9.06901 14.707 8.45703Z"/>
+                    </svg>
+                </a>
+            </div><!--util-->
+        </header>
+        <main class="container">
+            <section class="visual">
+                <h2 class="sr-only">팝업</h2>
+            <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소-->
+                <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소-->
+                    <li class="swiper-slide bg1">
+                        <h3>당신의 사유가 깊어지는 시간</h3>
+                        <p>한 권의 책이 당신의 세계를 넓힙니다. 을유의 선별된 문장들로 삶의 해답을 발견하세요.</p>
+                    </li> <!-- 팝업 요소들 (div로 해도 상관없음)-->
+                    <li class="swiper-slide bg2">
+                        <h3>기록의 80년, 시대를 읽는 안목</h3>
+                        <p>대한민국 출판의 뿌리 을유문화사, 변치 않는 고전의 가치로 내일의 지혜를 전합니다.</p>
+                    </li>
+                    <li class="swiper-slide bg3">
+                        <h3>책, 사람, 그리고 을유문화사</h3>
+                        <p>좋은 책은 좋은 사람을 만듭니다. 1945년부터 지금까지, 당신의 곁에서 문학의 숲을 가꿉니다.</p>
+                    </li>
+                </ul>
+            </div><!--//swiper-->
+            <div class="ctrl_left">
+                <!--jquery에서 넓이를 제어하려면 반드시 해당 요소가 코딩된 요소여야함
+                before  / after는 안됨-->
+                <div class="bar"><span></span></div>
+                <button class="stop">
+                    <span class="sr-only">일시정지</span>
+                    <svg width="12" height="14" viewBox="0 0 12 14" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M8 14V0H12V14H8ZM0 14V0H4V14H0Z"/>
+                    </svg>
+                </button>
+                <button class="play">
+                    <span class="sr-only">다시시작</span>
+                    <svg width="11" height="14" viewBox="0 0 11 14" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0 14V0L11 7L0 14Z"/>
+                    </svg>
+
+                </button>
+            </div><!--//ctrl_left-->
+            <div class="ctrl_right">
+                <button class="prev">
+                    <span class="sr-only">이전 팝업 보기</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3.825 9L9.425 14.6L8 16L0 8L8 0L9.425 1.4L3.825 7H16V9H3.825Z"/>
+                    </svg>
+                </button>
+                <button class="next">
+                    <span class="sr-only">다음팝업보기</span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12.175 9L6.575 14.6L8 16L16 8L8 0L6.575 1.4L12.175 7H0V9H12.175Z"/>
+                    </svg>
+                </button>
+            </div><!--//ctrl_fight-->
+            </section>
+            <section class="book"></section>
+            <section class="interview"></section>
+            <section class="story"></section>
+        </main>
+        <footer class="footer"></footer>
+    </div>    
 </body>
 </html>
