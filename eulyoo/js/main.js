@@ -50,12 +50,34 @@ $(document).ready(function(){
             $('.visual .ctrl_left .stop').show()
         })
 
+        /******************************************************************** 
+         * 1차 지금 현재 넓이가 pc버전인지 mobile 버전인지 구분 (메뉴만 1025px이상은 pc 1024px 이하는 mobile)
+         *  ==> 브라우저의 넓이값을 구해서 1024보다 큰지 작은지 구분
+         *  ==> 첫번째 로딩됐을때 계산, 그리고 브라우저가 리사이즈 될때마다 브라우저 넓이 체크
+         *      동일한 계산을 두번해야하는 경우는 함수로 정의한 다음에 호출해서 사용하는 방식을 씀
+        *********************************************************************/
+        let win_w //브라우저 넓이
+        let mobile_size  = 1024 //모바일 사이즈 시작(경계)
+        let device_status //pc, mobile 두개의 값 저장
 
-        /**************메뉴오버***************/
-        $('.header .gnb .gnb_wrap ul.depth1 > li ').on('mouseenter', function(){
-            $(this).addClass('over')
+        function device_chk(){ //함수의 정의
+            win_w = $(window).width()
+            if(win_w > mobile_size){
+                device_status = 'pc'
+            }else{
+                device_status = 'mo'
+            }
+            console.log(device_status)
+        }
+        device_chk()//함수실행 -- 문서가 로딩되고 1번만
+        $(window).resize(function(){
+            device_chk()//함수실행 -- 브라우저가 리사이즈 될때마다 1번씩
         })
-        $('.header .gnb .gnb_wrap ul.depth1 > li ').on('mouseleave', function(){
-            $(this).removeClass('over')
+
+        $('header .gnb .gnb_wrap ul.depth1 > li').on('mouseenter', function(){
+            if(device_status == 'pc'){
+                console.log('오버했다아아아!')
+            }
         })
+
 })//document).ready
