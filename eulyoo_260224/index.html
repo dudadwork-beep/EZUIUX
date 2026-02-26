@@ -7,6 +7,9 @@
     <script src="js/jquery-3.7.1.min.js"></script>
     <script src="js/swiper-bundle.min.js"></script>
     <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script> 
+    <!--aos animation-->
 
     <!-- 내가 만든 파일 연결 -->
     <link rel="stylesheet" href="css/main.css">
@@ -144,13 +147,13 @@
                     </button>
                 </div><!--//ctrl_right-->
             </section>
-            <section class="book">
+            <section class="book" data-aos="fade-up">
                 <div class="inner"><!--콘텐츠를 감싸는 요소를 inner라고 많이 줌-->
-                    <div class="tit">
+                    <div class="tit" data-aos="fade-up">
                         <h2>을유, <br>오늘의 책</h2>
                         <p>시대를 관통하는 고전부터 오늘의 문장까지, <br>을유가 엄선한 책들을 만나보세요.</p>
                     </div><!--//tit-->
-                    <div class="list">
+                    <div class="list" data-aos="fade-up" data-aos-delay="500">
                         <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
                             <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
                                 <li class="swiper-slide">
@@ -228,7 +231,7 @@
                             </ul>
                         </div>
                     </div><!--//list-->
-                    <div class="btn_wrap">
+                    <div class="btn_wrap" data-aos="fade-up">
                         <button class="prev">
                             <span class="sr-only">이전팝업보기</span>
                             <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
@@ -247,11 +250,11 @@
             </section>
             <section class="interview">
                 <div class="wrapper">
-                    <div class="tit">
+                    <div class="tit" data-aos="fade-up">
                         <h2>기록하는 사람들, 인터뷰</h2>
                         <p>작가의 목소리로 직접 듣는 집필 비하인드와 책 너머의 깊은 이야기.</p>
                     </div>
-                    <div class="list">
+                    <div class="list" data-aos="fade-up">
                         <ul>
                             <!-- 마우스를 올리면 li에 over 클래스를 추가  (pc 버전일때만) -->
                             <li>
@@ -327,11 +330,11 @@
             </section>
             <section class="story">
                 <div class="wrapper">
-                    <div class="tit">
+                    <div class="tit" data-aos="fade-up">
                         <h2>을유와 나누는 일상의 문장</h2>
                         <p>페이스북에서 실시간으로 전하는 연재물과 출판계의 따끈한 소식들.</p>
                     </div>
-                    <div class="list">
+                    <div class="list" data-aos="fade-up">
                         <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
                             <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
                                 <!--이미지가 길면 long 클래스-->
@@ -380,7 +383,7 @@
                             </ul>
                         </div>
                     </div>
-                    <div class="btn_wrap">
+                    <div class="btn_wrap" data-aos="fade-up">
                         <button class="prev">
                             <span class="sr-only">이전팝업보기</span>
                             <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
