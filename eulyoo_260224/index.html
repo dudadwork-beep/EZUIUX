@@ -253,6 +253,7 @@
                     </div>
                     <div class="list">
                         <ul>
+                            <!-- 마우스를 올리면 li에 over 클래스를 추가  (pc 버전일때만) -->
                             <li>
                                 <a href="#n">
                                     <div class="photo"><img src="images/interview01.jpg" alt="인터뷰 사진"></div>
@@ -314,15 +315,122 @@
                                         </h3>
                                         <p>"폴라로이드 에멀전 리프트는 폴라로이드 겉면을 뜯어내고 물에 불리면 아주 얇은 유제층이 물 위를 둥둥 떠다니는데 그걸 종이에 다시 건져 내는 작업이에요</p>
                                     </div>
+                                    <!-- <a href="#n" class="more">더보기</a>
+                                    <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M6 8H0V6H6V0H8V6H14V8H8V14H6V8Z" />
+                                    </svg> -->
                                 </a>
                             </li>
                         </ul>
                     </div>
                 </div>
             </section>
-            <section class="story"></section>
+            <section class="story">
+                <div class="wrapper">
+                    <div class="tit">
+                        <h2>을유와 나누는 일상의 문장</h2>
+                        <p>페이스북에서 실시간으로 전하는 연재물과 출판계의 따끈한 소식들.</p>
+                    </div>
+                    <div class="list">
+                        <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                            <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                                <!--이미지가 길면 long 클래스-->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo long"><img src="images/images01.jpg" alt="sns표지"></div>
+                                        <h3><span>#서평단후기 #스크리놀로지 #서평후기</span></h3>
+                                        <p>『스크리놀로지』를 먼저 읽고 서평을 남겨주신 독자 분들의 후기 일부를 공유합니다</p>
+                                    </a>
+                                </li> <!--사진1-->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/images02.jpg" alt="sns표지"></div>
+                                        <h3><span>#을유세계문학전집 #세번째경찰관 </span></h3>
+                                        <p>가장 많은 출간 문의를 받은 책은? 2021년부터 2026년까지, 독자를 애타게 한 이 책의 정체는, 바로 을유세계문학전집 147번 플랜 오브라이언, 『#세번째경찰관』</p>
+                                    </a>
+                                </li> <!--사진2-->
+                                <li class="swiper-slide long">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/images03.jpg" alt="sns표지"></div>
+                                        <h3><span>#을유헤드라인 #차라투스트라는이렇게말했다 #을유사상고전</span></h3>
+                                        <p>씨네21 추천도서『차라투스트라는 이렇게 말했다』 “‘옮긴이의 말’을 빌리면 마음을 드러내는 것이 사유이고, 사유는 마음이 원하는 것을 자유롭게 해준다. 그렇기 때문에 사유는 시적으로 표현된다. 마치 노래처럼. 원전의 문체와 운율감을 살린 번역이라는 강조점은 그래서 중요해진다.”</p>
+                                    </a>
+                                </li> <!--사진3-->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/images04.jpg" alt="sns표지"></div>
+                                        <h3><span>#서평단 #서평단모집 #어쩔수가없다스토리보드북</span></h3>
+                                        <p>『#어쩔수가없다』라는 잔혹하고 우스운 이야기를 빛과 소리의 세계로 끌어올린 아름다운 작업</p>
+                                    </a>
+                                </li> <!--사진4-->
+                                <li class="swiper-slide long">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/images05.jpg" alt="sns표지"></div>
+                                        <h3><span>#을유연재 #스크리놀로지 #3화</span></h3>
+                                        <p>"이미지가 투사되거나 얹히고 생성되는 바로 그 스크린의 표면은 환영적이고 가상적이지만 동시에 우리가 서 있는 현실 세계로부터 때때로 자신을 조용하지만 강력하게 분리해 낸다. 이러한 분리는 결국 스크린을 바라보는 이로 하여금 분리와 거부, 그리고 소외의 감정을 느끼게 만든다."</p>
+                                    </a>
+                                </li> <!--사진5-->
+                                <li class="swiper-slide">
+                                    <a href="#n">
+                                        <div class="photo"><img src="images/images06.jpg" alt="sns표지"></div>
+                                        <h3><span>#을유세문한문장 #데미안 #헤르만헤세</span></h3>
+                                        <p>한없이 오래 그는 끊임없이 내 눈만 들여다보고 있었다. 천천히 그가 얼굴을 내게로 들이밀었다. 우리가 거의 맞닿을 정도로. "싱클레어!" 그가 속삭이듯 말했다. 헤르만 헤세, 『데미안』</p>
+                                    </a>
+                                </li> <!--사진6-->
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="btn_wrap">
+                        <button class="prev">
+                            <span class="sr-only">이전팝업보기</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M9.40625 1.40039L3.81641 6.99121L3.79492 7.0127H15.9873V8.9873H3.79492L9.40625 14.5986L8 15.9824L0.0175781 8L8 0.0166016L9.40625 1.40039Z" />
+                            </svg>
+                        </button>
+                        <button class="next">
+                            <span class="sr-only">다음팝업보기</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6.59375 1.40039L12.1836 6.99121L12.2051 7.0127H0.0126953V8.9873H12.2051L6.59375 14.5986L8 15.9824L15.9824 8L8 0.0166016L6.59375 1.40039Z" />
+                            </svg>
+                        </button>
+                         <a href="#n" class="more">
+                            <span class="sr-only">더보기</span>
+                            <svg width="14" height="14" viewBox="0 0 14 14" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 8H0V6H6V0H8V6H14V8H8V14H6V8Z"/>
+                            </svg>
+                        </a>
+                    </div><!--//btn_wrap-->
+                </div>
+            </section>
         </main>
-        <footer class="footer"></footer>
+        <footer class="footer">
+            <h2 class="sr-only">사이트정보</h2>
+            <div class="wrapper">
+                <div class="slogan">기록의 힘,<br>사람과 책을 잇는<br>을유문화사.</div>
+                <div class="f_info">
+                    <h3>위치</h3>
+                    <p> 03997 서울 마포구 서교동 469-48<br>(월드컵로16길 52-7)</p>
+                    <h3>연락처</h3>
+                    <ul class="tel">
+                        <li>전화번호 : 02-732-9154</li>
+                        <li>팩스: 02-732-9154</li>
+                        <li>메일: eulyoo1945@eulyoo.co.kr</li>
+                    </ul>
+                    <h3>소셜네트워크</h3>
+                    <ul class="sns">
+                        <li><a href="https://www.instagram.com/eulyoo/" target="_blank" title="새창열림">인스타그램</a></li>
+                        <li><a href="https://www.facebook.com/eulyoo/" target="_blank" title="새창열림">페이스북</a></li>
+                        <li><a href="https://www.youtube.com/@eulyoo1945" target="_blank" title="새창열림">유튜브</a></li>
+                        <!--다른홈페이지로 연결할때는 새창링크로 함 (target="_blank")
+                            새창 링크를 할때 반드시 title="새창열림" 이렇게 표시 해야함-->
+                    </ul>
+                </div>
+                <div class="copyright">
+                    <div class="f_logo"><img src="images/logo_w.svg" alt="을유문화사 로고"></div>
+                    <p>COPYRIGHT © 2020 EULYOO PUBLISHING CO., LTD. ALL RIGHTS RESERVED. SINCE 1945.</p>
+                </div>
+            </div>
+        </footer>
     </div>
 </body>
 </html>
