@@ -2,3 +2,146 @@
     layout.css
     header, footer의 스타일이 저장됨.
 */
+
+.header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: var(--header-h);
+    color: #fff;
+}
+.header .wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo a{
+    display: block;
+    width: 208px;
+    height: 40.06px;
+    background: url(../images/common/logo_w.svg) no-repeat center center / contain;
+}
+.header.menu_over,
+.header.fixed{
+    background-color: #fff;
+    color: var(--font-color-tit);
+    box-shadow: 0 0 5px rgba(0, 0, 0, 1);
+}
+.header.menu_over .logo a,
+.header.fixed .logo a{
+    background-image: url(../images/common/logo.svg);
+}
+
+@media screen and (min-width:1025px){ /*1025px 이상일때만 적용 */
+            .header .gnb ul.depth1{
+                display: flex;
+                padding: 0 24px;
+                text-align: center;
+            }
+            .header .gnb ul.depth1 > li{
+                position: relative; /*ul.depth2의 정렬의 기준*/
+            }
+            .header .gnb ul.depth1 > li > a{
+                display: block;
+                line-height: var(--header-h);
+                font-size: 20px;
+                font-weight: var(--font-weight-bold);
+                padding: 0 22px;
+            } 
+            /* 2차 메뉴가 있는 1차 메뉴만 */
+            .header .gnb ul.depth1 > li:has(ul.depth2) > a span{
+                padding-right: 19px;
+                position: relative; /*after 정렬의 기준*/
+            }
+            .header .gnb ul.depth1 > li:has(ul.depth2) > a span::after{
+                content: "";
+                position: absolute;
+                right: 0;
+                top: 6px;
+                width: 9px;
+                height: 16px;
+                background-image: var(--icon-arrow-w);
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: center center;
+                transition: transform 0.3s;
+            }
+            .header .gnb ul.depth1 > li > ul.depth2{
+                display: none;
+                position: absolute;
+                left: 50%;
+                transform:  translateX(-50%); /*가운데*/
+                top: 74px;
+                background-color: var(--color-bg);
+                padding: 13px 15px;
+                border-radius: 10px;
+            }
+            .header .gnb ul.depth1 > li > ul.depth2 > li > a{
+                display: block;
+                padding: 5px 0;
+                white-space: nowrap; /*무조건 1줄*/
+                color: #fff;
+            }
+            .header .gnb ul.depth1 > li > ul.depth2 > li > a:hover{
+                text-decoration: underline;
+            }
+            .header .util{
+                display: flex;
+            }
+
+            .header .util .mypage{
+                background-image: var(--icon-mypage-w);
+                display: block;
+                width: 40px;
+                height: 40px;
+                background-position: center center;
+                background-repeat: no-repeat;
+            }
+            .header .util .sitemap_btn{
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                gap: 5px 0;
+                width: 40px;
+                height: 40px;
+            }
+            .header .util .sitemap_btn span{
+                width: 23px;
+                height: 2px;
+                background-color: #fff;
+                border-radius: 2px;
+            }
+            .header .sitemap{
+                display: none;
+            }
+/**** 마우스에 오버했을때****/
+            .header.menu_over .gnb ul.depth1 > li.over:has(ul.depth2) > a span::after{
+                transform: rotate(180deg);
+            }
+            .header.menu_over .gnb ul.depth1 > li:has(ul.depth2) > a span::after,
+            .header.fixed .gnb ul.depth1 > li:has(ul.depth2) > a span::after{
+                background-image: var(--icon-arrow);
+            }
+            .header.menu_over .util .mypage,
+            .header.fixed .util .mypage{
+                background-image: var(--icon-mypage);
+            }
+            .header.menu_over .util .sitemap_btn span,
+             .header.fixed .util .sitemap_btn span{
+                background-color: var(--font-color-default);
+            }
+}/*@media*/
+
+@media screen and (min-width:1025px) and (max-width:1280px){ /* 1280 ~ 1025 */
+                .header .gnb ul.depth1 > li > a{
+                    padding: 0 15px;
+                }
+}/*@media*/
+
+.footer{
+    margin: 0 0 0 2000px;
+}

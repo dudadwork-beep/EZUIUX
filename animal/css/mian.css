@@ -7,13 +7,93 @@
 @import url(fonts.css);
 @import url(layout.css);
 
-
-h2{
-    font-size: var(--font-size-tit);
+.visual{
+    overflow-x: hidden; /*가로스크롤바 허용안함*/
+    position: relative; /* ctrl_wrap 정렬의 기준 */
+}
+.visual .popup_wrap .popup{
+    margin: 0;
+}
+.visual .popup_wrap .popup .item{
+    height: clamp(500px, 65vw, 650px);
+    background: url(../images/main/visual01.jpg) no-repeat center center / cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.visual .popup_wrap .popup .item.bg2{
+    background-image: url(../images/main/visual02.jpg);
+}
+.visual .popup_wrap .popup .item.bg3{
+    background-image: url(../images/main/visual03.jpg);
+}
+.visual .popup_wrap .popup .item p{
+    margin:  0 0 clamp(83px, 14vw, 141px) 0;
+    font-size: clamp(30px, 6vw, 60px);
     font-weight: var(--font-weight-bold);
-    color: var(--font-color-default);
     line-height: var(--line-height-tit);
 }
-.wrapper{
-    border: 1px solid red;
+.visual .popup_wrap .popup .slick-dots{
+    position: absolute; /*popup을 기준으로 정렬*/
+    bottom: clamp(45px, 4vw, 48px);
+    left: calc(50% - (var(--wrapper-w) / 2)); /*absolute는 반드시 left 또는 right가 있어야함*/
+    width: auto;
+    display: flex;
+    gap: 0 6px;
 }
+.visual .popup_wrap .popup .slick-dots li{
+    width: auto;
+    height: auto;
+    margin: 0;
+}
+.visual .popup_wrap .popup .slick-dots li button{
+    width: 15px;
+    height: 7px;
+    padding: 0;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.6);
+}
+.visual .popup_wrap .popup .slick-dots li.slick-active button{
+    width: 78px;
+    background: #fff;
+}
+.visual .popup_wrap .popup .slick-dots li button::before{
+    display: none;
+}
+.visual .ctrl_wrap{
+    position: absolute; /*visual을 기준으로 정렬*/
+    left: calc(50% - (var(--wrapper-w) / 2) + 139px);
+    bottom: 35px;
+}
+.visual .ctrl_wrap button{
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.2);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.visual .ctrl_wrap button.stop{
+    display: none;
+    background-image: var(--icon-stop);
+}
+.visual .ctrl_wrap button.play{
+    background-image: var(--icon-play);
+}
+
+
+@media screen and (max-width:1500px){
+            .visual .popup_wrap .popup .slick-dots{
+            left: var(--wrapper-margin);
+            }
+            .visual .ctrl_wrap{
+            left: calc(var(--wrapper-margin) + 139px);
+            }
+}/*@media*/
+
+@media screen and (max-width:768px){
+                .visual .popup_wrap .popup .item p br{
+                    display: none;/* 줄바꿈 삭제 */
+                }
+}/*@media*/

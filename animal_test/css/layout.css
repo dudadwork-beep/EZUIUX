@@ -1,0 +1,68 @@
+.header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: var(--header-h);
+    color: var(--color-white);
+}
+.header .wrapper{
+    display: flex; /*logo , gnb , util 정렬 배치*/
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo a{
+    display: block;
+    width: 208px;
+    height: 40px;
+    background: url(../images/common/logo_w.svg) no-repeat center center / contain;
+}
+.header .gnb ul.depth1{
+    display: flex; /*li를 좌우로 배치*/
+    text-align: center;
+}
+.header .gnb ul.depth1 > li{
+    position: relative;
+}
+
+.header .gnb ul.depth1 > li > a{
+    display: block;
+    padding: 0 28px;
+    font-size: 20px;
+    line-height: var(--header-h);
+    font-weight: var(--font-weight-bold);
+}
+.header .gnb ul.depth1 > li > a span{
+    display: block;
+    padding-right: 18px;
+    position: relative;
+}
+.header .gnb ul.depth1 > li > a span::after{
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 48px;
+    width: 12px;
+    height: 9px;
+    background-image: var(--icon-arrow-w);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: contain;
+}
+.header .gnb ul.depth1 > li > ul.depth2{
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 74px;
+    background-color: var(--color-main);
+    color: var(--color-white);
+    border-radius: 10px;
+    padding: 13px 15px;
+    display: none;
+}
+.header .gnb ul.depth1 > li > ul.depth2 > li > a{
+    display: block;
+    white-space: nowrap;
+    padding: 5px 0;
+}
