@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="js/jquery-3.7.1.min.js"></script>
+    <script src="js/slick.min.js"></script>
+    <link rel="stylesheet" href="css/slick.css">
+    <link rel="stylesheet" href="css/slick-theme.css">
+    <!-- 외부 라이브러리 파일 먼저 연결 -->
+
+    <!-- 내가 만든 파일은 나중에 연결 -->
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="js/common.js"></script>
+    <script src="js/main.js"></script>
+    <title>종합유기견보호센터</title>
+</head>
+
+<body>
+    <div id="wrap">
+        <!--
+            메뉴는 상단 고정 fixed 클래스 추가
+            pc 메뉴에 마우스를 오버하면 menu_over 클래스 추가
+            mobile 에서 메뉴를 열면 header menu_open 클래스 추가
+        -->
+        <header class="header  ">
+            <div class="wrapper">
+                <h1 class="logo"><a href="index.html"><span class="sr-only">전국종합유기견분양센터 종합유기견보호센터</span></a></h1>
+                <nav class="gnb">
+                    <ul class="depth1">
+                        <!-- 메뉴에 마우스를 오버하면 li에 over 클래스 추가 -->
+                        <li>
+                            <a href="contents/find.html"><span>찾습니다</span></a>
+                            <ul class="depth2">
+                                <li><a href="contents/find.html"><span>반려동물 실종신고</span></a></li>
+                                <li><a href="contents/find.html"><span>유기동물 보호중</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contents/adopt.html"><span>구조분양</span></a></li>
+                        <li>
+                            <a href="contents/support.html"><span>봉사·후원</span></a>
+                            <ul class="depth2">
+                                <li><a href="contents/support.html"><span>자원봉사 모집</span></a></li>
+                                <li><a href="contents/support.html"><span>기부금 및 후원</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="contents/notice.html"><span>커뮤니티</span></a>
+                            <ul class="depth2">
+                                <li><a href="contents/notice.html"><span>자유게시판</span></a></li>
+                                <li><a href="contents/notice.html"><span>재회성공담</span></a></li>
+                                <li><a href="contents/notice.html"><span>입양후기</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="contents/info.html"><span>반려지식</span></a>
+                            <ul class="depth2">
+                                <li><a href="contents/info.html"><span>애견 지식정보</span></a></li>
+                                <li><a href="contents/info.html"><span>냥이 지식정보</span></a></li>
+                                <li><a href="contents/info.html"><span>기타동물 지식정보</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="util">
+                    <a href="#n" class="mypage"><span class="sr-only">마이페이지</span></a>
+                    <button class="sitemap_btn" title="메뉴 열기">
+                        <span class="line1"></span>
+                        <span class="line2"></span>
+                        <span class="line3"></span>
+                    </button>
+                </div><!--util-->
+            </div><!--//wrapper-->
+            <div class="sitemap"><!-- pc에서는 전체메뉴, 모바일에서는 메뉴 -->
+                <h2 class="sr-only">사이트맵</h2>
+                <div class="sitemap_wrap">
+                    <ul class="depth1">
+                        <li>
+                            <!-- 모바일에서는 하위메뉴를 여는 기능을 가지고 있으므로 button태그로 코딩 -->
+                            <button><span>찾습니다</span></button>
+                            <ul class="depth2">
+                                <li><a href="contents/find.html"><span>반려동물 실종신고</span></a></li>
+                                <li><a href="contents/find.html"><span>유기동물 보호중</span></a></li>
+                            </ul>
+                        </li>
+                        <li><a href="contents/adopt.html"><span>구조분양</span></a></li>
+                        <li>
+                            <button><span>봉사·후원</span></button>
+                            <ul class="depth2">
+                                <li><a href="contents/support.html"><span>자원봉사 모집</span></a></li>
+                                <li><a href="contents/support.html"><span>기부금 및 후원</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <button><span>커뮤니티</span></button>
+                            <ul class="depth2">
+                                <li><a href="contents/notice.html"><span>자유게시판</span></a></li>
+                                <li><a href="contents/notice.html"><span>재회성공담</span></a></li>
+                                <li><a href="contents/notice.html"><span>입양후기</span></a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <button><span>반려지식</span></button>
+                            <ul class="depth2">
+                                <li><a href="contents/info.html"><span>애견 지식정보</span></a></li>
+                                <li><a href="contents/info.html"><span>냥이 지식정보</span></a></li>
+                                <li><a href="contents/info.html"><span>기타동물 지식정보</span></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+                <div class="sitemap_bg"></div><!--모바일 배경 검은색-->
+            </div>
+        </header>
+        <main class="container">
+            <section class="visual">
+                <h2 class="sr-only">팝업</h2>
+                <div class="popup_wrap">
+                    <div class="popup"> <!-- slick에서 호출하는 이름 -->
+                        <div class="item  bg1">
+                            <div class="wrapper">
+                                <p>애타는 마음과 따뜻한 손길이 모여 <br> 기적 같은 재회와 행복한 입양을 만듭니다</p>
+                            </div>
+                        </div>
+                        <div class="item  bg2">
+                            <div class="wrapper">
+                                <p>길 잃은 생명에게 따뜻한 손길을 건네고 <br> 행복한 반려의 기쁨을 함께 공유하세요</p>
+                            </div>
+                        </div>
+                        <div class="item  bg3">
+                            <div class="wrapper">
+                                <p>실종, 구조, 입양부터 유익한 반려 지식과 <br> 따뜻한 소통까지 모두 나누는 곳</p>
+                            </div>
+                        </div>
+                    </div><!--//popup-->
+                </div><!--//popup_wrap-->
+                <div class="ctrl_wrap">
+                    <button class="stop"><span class="sr-only">일시정지</span></button> <!-- 일시정지 버튼 -->
+                    <button class="play"><span class="sr-only">재생</span></button> <!-- 재생 버튼 -->
+                </div><!--//ctrl_wrap-->
+            </section>
+            <section class="find">
+                <div class="wrapper">
+                    <h2>찾습니다</h2>
+                    <div class="tab_list">
+                        <ul role="tablist"><!--role은 해당요소의 역활을 씀...-->
+                            <!-- id는 이 html안에서 유일한 이름 
+                                aria-selected="true" 현재 선택된 탭
+                                aria-controls에 써있는 속성값과 같은 id갖은 요소를 보이게 한다는 이야기 --->
+                            <li id="find_tab01" role="tab" aria-controls="find_conts01" aria-selected="true"
+                                class="animal active">
+                                <button><span>반려동물</span><em class="sr-only">선택됨</em></button>
+                                <!--선택된 요소는 탭 이름에 선택됨 이라고 써줘야함-->
+                            </li>
+                            <li id="find_tab02" role="tab" aria-controls="find_conts02" aria-selected="false"
+                                class="people ">
+                                <button><span>보호자</span><em class="sr-only"></em></button>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="tab_conts">
+                        <div id="find_conts01" aria-labelledby="find_tab01" class="tab_item animal active">
+                            <h3 class="sr-only">잃어버린 반려동물을 찾습니다.</h3>
+                            <div class="tab_conts_list_wrap">
+                                <div class="tab_conts_list"> <!-- slick에서 호출하는 이름 -->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_animal01.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>실종장소</strong>
+                                                <span>경기 고양시 노첨길 95 가로수 공원 벤치 앞</span>
+                                            </li>
+                                            <li>
+                                                <strong>실종날짜</strong>
+                                                <span>2026-02-16</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>시츄 수컷 7kg 10살</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>이마 중앙에 흰색 세로줄</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--//item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_animal02.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>실종장소</strong>
+                                                <span>대구 바르미스시뷔페두산점 야외주차장</span>
+                                            </li>
+                                            <li>
+                                                <strong>실종날짜</strong>
+                                                <span>2026-01-23</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>춘향이/암컷/중성화</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>M무늬/앞발 흰색털 높이 짧음/호박색 눈</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--//item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_animal03.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>실종장소</strong>
+                                                <span>대구 중구 남산까치아파트</span>
+                                            </li>
+                                            <li>
+                                                <strong>실종날짜</strong>
+                                                <span>2025-10-14</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>블랙단모치와와 수컷</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>산책을 싫어해서 집에 있던 아이</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--//item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_animal04.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>실종장소</strong>
+                                                <span>경남 창원시 의창구 봉곡동 81-1번지</span>
+                                            </li>
+                                            <li>
+                                                <strong>실종날짜</strong>
+                                                <span>2026-02-20</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>코리아숏헤어 수컷</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>꼬리가 번개모양</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--//item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_animal05.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>실종장소</strong>
+                                                <span>경기 고양시 노첨길 95</span>
+                                            </li>
+                                            <li>
+                                                <strong>실종날짜</strong>
+                                                <span>2026-02-16</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>시츄 수컷 7kg 10살</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>이마 중앙에 흰색 세로줄</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--//item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_animal06.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>실종장소</strong>
+                                                <span>대구 바르미스시뷔페두산점 야외주차장</span>
+                                            </li>
+                                            <li>
+                                                <strong>실종날짜</strong>
+                                                <span>2026-01-23</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>춘향이/암컷/중성화</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>M무늬/앞발 흰색털 높이 짧음/호박색 눈</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--//item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_animal07.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>실종장소</strong>
+                                                <span>대구 중구 남산까치아파트</span>
+                                            </li>
+                                            <li>
+                                                <strong>실종날짜</strong>
+                                                <span>2025-10-14</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>블랙단모치와와 수컷</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>산책을 싫어해서 집에 있던 아이</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--//item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_animal08.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>실종장소</strong>
+                                                <span>경남 창원시 의창구 봉곡동 81-1번지</span>
+                                            </li>
+                                            <li>
+                                                <strong>실종날짜</strong>
+                                                <span>2026-02-20</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>코리아숏헤어 수컷</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>꼬리가 번개모양</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--//item-->
+                                </div><!--//tab_conts_list-->
+                            </div>
+                        </div>
+                        <div id="find_conts02" aria-labelledby="find_tab02" class="tab_item people">
+                            <h3 class="sr-only">떠도는 동물의 보호자를 찾습니다.</h3>
+                            <div class="tab_conts_list_wrap">
+                                <div class="tab_conts_list"> <!-- slick에서 호출하는 이름 -->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_people01.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>발견장소</strong>
+                                                <span>경기 광주시 곤지암읍</span>
+                                            </li>
+                                            <li>
+                                                <strong>발견날짜</strong>
+                                                <span>2026-02-28</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>강아지 암컷</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>털이 깨끗하고 사람을 잘 따름</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--//item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_people02.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>발견장소</strong>
+                                                <span>경북 영주시 가흥동 신재로</span>
+                                            </li>
+                                            <li>
+                                                <strong>발견날짜</strong>
+                                                <span>2026-02-20</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>슈나우저</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>슈나우저로 추정되는 개 한마리를 발견</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--//item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_people03.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>발견장소</strong>
+                                                <span>대구 각산역 근처</span>
+                                            </li>
+                                            <li>
+                                                <strong>발견날짜</strong>
+                                                <span>2026-02-11</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>삼색고양이</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>파란 목줄에 검은색 타이끈으로 고정</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--//item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_people04.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>발견장소</strong>
+                                                <span>경기 시흥</span>
+                                            </li>
+                                            <li>
+                                                <strong>발견날짜</strong>
+                                                <span>2026-02-12</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>래브라도 리트리버</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>3개월된 아기 검정 래브라도</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--//item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_people05.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>발견장소</strong>
+                                                <span>경기 광주시 곤지암읍</span>
+                                            </li>
+                                            <li>
+                                                <strong>발견날짜</strong>
+                                                <span>2026-02-28</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>강아지 암컷</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>털이 깨끗하고 사람을 잘 따름</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--//item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_people06.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>발견장소</strong>
+                                                <span>경북 영주시 가흥동 신재로</span>
+                                            </li>
+                                            <li>
+                                                <strong>발견날짜</strong>
+                                                <span>2026-02-20</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>슈나우저</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>슈나우저로 추정되는 개 한마리를 발견</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--//item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_people07.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>발견장소</strong>
+                                                <span>대구 각산역 근처</span>
+                                            </li>
+                                            <li>
+                                                <strong>발견날짜</strong>
+                                                <span>2026-02-11</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>삼색고양이</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>파란 목줄에 검은색 타이끈으로 고정</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--//item-->
+                                    <div class="item">
+                                        <div class="photo"><img src="images/main/find_people08.jpg" alt=""></div>
+                                        <ul>
+                                            <li>
+                                                <strong>발견장소</strong>
+                                                <span>경기 시흥</span>
+                                            </li>
+                                            <li>
+                                                <strong>발견날짜</strong>
+                                                <span>2026-02-12</span>
+                                            </li>
+                                            <li>
+                                                <strong>품종</strong>
+                                                <span>래브라도 리트리버</span>
+                                            </li>
+                                            <li>
+                                                <strong>특징</strong>
+                                                <span>3개월된 아기 검정 래브라도</span>
+                                            </li>
+                                        </ul>
+                                    </div><!--//item-->
+                                </div><!--//tab_conts_list-->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="message">
+                <div class="inner">
+                    <h2 class="sr-only">구조가 필요한 동물을 발견했을때 구조요령</h2>
+                    <p>
+                        <strong>공공장소에서 주인 없이<span>공공장소에서 주인 없이</span></strong>
+                        <strong>떠도는 동물을 발견한 경우<span>떠도는 동물을 발견한 경우</span></strong>
+                        <strong>관할 시군구청 또는 동물보호센터에<span>관할 시군구청 또는 동물보호센터에</span></strong>
+                        <strong>신고하시기 바랍니다.<span>신고하시기 바랍니다.</span></strong>
+                        <img src="images/main/message_sun.png" alt="" class="sun">
+                        <img src="images/main/messsage_cat.png" alt="" class="cat">
+                        <img src="images/main/message_born.png" alt="" class="born">
+                        <img src="images/main/message_dog.png" alt="" class="dog">
+                        <img src="images/main/message_flower.png" alt="" class="flower">
+                    </p>
+                </div>
+            </section>
+            <section class="adopt">
+                <h2>가족이 되어주세요</h2>
+                <div class="list_wrap">
+                    <div class="list"> <!-- slick에서 호출하는 이름 -->
+                        <div class="list_item">
+                            <a href="#n">
+                                <div class="photo"><img src="images/main/adopt01.jpg" alt=""></div>
+                                <strong>입양</strong>
+                                <span>강아지 - 믹스견<br>2~3살/7~8키로<br>중성화완료</span>
+                            </a>
+                        </div>
+                        <div class="list_item">
+                            <a href="#n">
+                                <div class="photo"><img src="images/main/adopt02.jpg" alt=""></div>
+                                <strong class="tmp">임보</strong>
+                                <span>고양이 - 아비시니안<br>중성화 완료 5살 남아<br>완전 개냥이</span>
+                            </a>
+                        </div>
+                        <div class="list_item">
+                            <a href="#n">
+                                <div class="photo"><img src="images/main/adopt03.jpg" alt=""></div>
+                                <strong>입양</strong>
+                                <span>강아지 - 말티즈<br>남자아이 / 1살정도<br>접종여부는 모름</span>
+                            </a>
+                        </div>
+                        <div class="list_item">
+                            <a href="#n">
+                                <div class="photo"><img src="images/main/adopt04.jpg" alt=""></div>
+                                <strong class="tmp">임보</strong>
+                                <span>고양이 - 한국 고양이<br>여아 / 11개월 / 중성화 완료<br>새끼 네마리를 낳은 어미냥</span>
+                            </a>
+                        </div>
+                        <div class="list_item">
+                            <a href="#n">
+                                <div class="photo"><img src="images/main/adopt05.jpg" alt=""></div>
+                                <strong>입양</strong>
+                                <span>강아지 - 믹스견<br>2살추정/6키로/중성화<br>심장사상충 치료중</span>
+                            </a>
+                        </div>
+                        <div class="list_item">
+                            <a href="#n">
+                                <div class="photo"><img src="images/main/adopt06.jpg" alt=""></div>
+                                <strong>입양</strong>
+                                <span>강아지 - 믹스견<br>2~3살/7~8키로<br>중성화완료</span>
+                            </a>
+                        </div>
+                        <div class="list_item">
+                            <a href="#n">
+                                <div class="photo"><img src="images/main/adopt07.jpg" alt=""></div>
+                                <strong class="tmp">임보</strong>
+                                <span>고양이 - 아비시니안<br>중성화 완료 5살 남아<br>완전 개냥이</span>
+                            </a>
+                        </div>
+                        <div class="list_item">
+                            <a href="#n">
+                                <div class="photo"><img src="images/main/adopt08.jpg" alt=""></div>
+                                <strong>입양</strong>
+                                <span>강아지 - 말티즈<br>남자아이 / 1살정도<br>접종여부는 모름</span>
+                            </a>
+                        </div>
+                        <div class="list_item">
+                            <a href="#n">
+                                <div class="photo"><img src="images/main/adopt09.jpg" alt=""></div>
+                                <strong class="tmp">임보</strong>
+                                <span>고양이 - 한국 고양이<br>여아 / 11개월 / 중성화 완료<br>새끼 네마리를 낳은 어미냥</span>
+                            </a>
+                        </div>
+                        <div class="list_item">
+                            <a href="#n">
+                                <div class="photo"><img src="images/main/adopt10.jpg" alt=""></div>
+                                <strong>입양</strong>
+                                <span>강아지 - 믹스견<br>2살추정/6키로/중성화<br>심장사상충 치료중</span>
+                            </a>
+                        </div>
+                    </div><!--//list-->
+                </div><!--//list_wrap-->
+                <div class="rolling_wrap">
+                    <div class="rolling">
+                        <p>ADOPT, DON’T SHOP.ADOPT, DON’T SHOP.ADOPT, DON’T SHOP.ADOPT, DON’T SHOP.ADOPT, DON’T SHOP.ADOPT, DON’T SHOP.ADOPT, DON’T SHOP.ADOPT, DON’T SHOP.</p>
+                    </div>
+                </div><!--rolling_wrap-->
+            </section>
+            <section class="review">
+                <div class="wrapper">
+                    <h2>우리의 해피엔딩</h2>
+                    <div class="list_wrap">
+                        <div class="list"> <!-- slick에서 호출하는 이름 -->
+                            <div class="list_item">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/main/review01.jpg" alt=""></div>
+                                    <h3><span>소망이 찾았습니다</span></h3>
+                                    <p>소망이 찾았습니다 너무 감사드립니다ㅜㅜ</p>
+                                </a>
+                            </div>
+                            <div class="list_item">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/main/review02.jpg" alt=""></div>
+                                    <h3><span>봄이 왔어요</span></h3>
+                                    <p>오늘 봄이를 입양했어요.너무 잘 따르고 사람을 좋아하네요.기본 예의는 다소 부족해서 훈련은 해야할 것 같아요. 오늘은 첫날이니까 자유를 누리도록 합니다. 앞으로도 입양후기 종종 올려볼게요~</p>
+                                </a>
+                            </div>
+                            <div class="list_item">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/main/review03.jpg" alt=""></div>
+                                    <h3><span>깨순이 근황!</span></h3>
+                                    <p>2월달에 이사하느라 바빠서 근황을 못 올렸네요~ 깨순이는 전 보다 활발하게 잘 지내고 있습니다! 집이 넓어져서 뛰어 다니면서 놀아달라고 졸졸 쫒아다니고 있어요. 우스게소리로 스토커 붙었다고 애기하면서 깨순이랑 잘 지내고 있습니다. </p>
+                                </a>
+                            </div>
+                            <div class="list_item">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/main/review04.jpg" alt=""></div>
+                                    <h3><span>일주일 만에 돌아왔습니다</span></h3>
+                                    <p>7일째 되는 아침에 집에 돌아왔습니다. 누군가 데리고 있다가 집으로 보내신건지 믿기지 않지만 스스로 돌아왔고 사실입니다.</p>
+                                </a>
+                            </div>
+                            <div class="list_item">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/main/review05.jpg" alt=""></div>
+                                    <h3><span>두달만에 찾았습니다!</span></h3>
+                                    <p>포기하려던 찰나 두달만에 찾았습니다. 찾고자하면 긴 시간이 지나도 찾을 수 있다는 것에 놀랐습니다. 포기하지마시고 꼭 찾으시길 바랍니다! 도와주시고, 관심가져주셔서 정말 감사드립니다.</p>
+                                </a>
+                            </div>
+                            <div class="list_item">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/main/review06.jpg" alt=""></div>
+                                    <h3><span>생강이 입양한지 한달 되었어요^^</span></h3>
+                                    <p>생강이가 저희 가족이 된지 한달이 되었습니다. 겁도 많고 예민해서 매사 덜덜 떨던 생강은 이제 집에서 우다다도 잘하고 산책도 잘 하고 장난도 간혹 말썽도 하며 잘 있습니다.^^처음 왔을땐 너무 떠느라 산책도 안아주기도 힘들었는데 지금은 안아줘도 떨지 않고 산책 가는 발걸음도 가벼워진 것 같아 생강이가 점점 용기도 내고 저희에게 마음을 열어준거 같아 감사합니다. </p>
+                                </a>
+                            </div>
+                            <div class="list_item">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/main/review07.jpg" alt=""></div>
+                                    <h3><span>타비 잘 지내고 있어요!</span></h3>
+                                    <p>꼬질꼬질하던 회색ㅋㅋㅋ 고양이가 타비라는 이름으로 가족이 된지 벌써 1년이 넘었습니다 여전히 건강하고 사람 좋아하고 착한 순둥이입니다. 타비 덕분에 하루하루가 너무 소중하고 행복합니다. 보호센터 선생님들 항상 감사합니다! 새해 복 많이 받으세요.</p>
+                                </a>
+                            </div>
+                            <div class="list_item">
+                                <a href="#n">
+                                    <div class="photo"><img src="images/main/review08.jpg" alt=""></div>
+                                    <h3><span>찾았습니당</span></h3>
+                                    <p>3주전에 전단지 돌렸었는데 어제 제보자의 연락을 받고 장소에 가보니 있었습니다 ㅠㅠ</p>
+                                </a>
+                            </div>
+                        </div>
+                    </div><!--//list_wrap-->
+                    <div class="more">
+                        <a href="#n">
+                            <strong>11,422</strong>
+                            <span>건의 후기</span>
+                        </a>
+                    </div><!--//more-->
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <div class="wrapper">
+                <button class="top"><span>TOP</span></button>
+                <div class="f_nav">
+                    <ul>
+                        <li><a href="#n">개인정보처리방침</a></li>
+                        <li><a href="#n">로그인</a></li>
+                        <li><a href="#n">회원가입</a></li>
+                        <li><a href="#n">이용약관</a></li>
+                        <li><a href="#n">상담문의하기(상담시간 10:00~16:00, 토일 휴무)</a></li>
+                    </ul>
+                </div>
+                <div class="f_info">
+                    <span>(주)상상유니버스 유기견보호센터</span><br>
+                    <span>주소 : 서울특별시 마포구 동교로23길 21, 2층</span><span>대표자 : 정민수</span><span>사업자번호 : 898-87-00897</span><br>
+                    <span>동물판매업 등록번호: 제3130000-045-2018-0050호</span><span>통신판매업 등록번호 제2020-서울마포-0181호</span><br>
+                    <span>개인정보관리자 : 정민수</span><span>E-mail: master@zooseyo.com</span>
+                </div>
+                <div class="copyright">Copyright (c) 종합유기견보호센터 All Rights Reserved</div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+/* 각각의 콘텐츠페이지 스타일 
+   - 여기있는 css를 수정하면 해당 페이지 1개만 영향이 있음 
+   대신에 절대 선택자를 페이지에 제한되게 cnt_페이지명 으로 시작해야함
+*/
+.cnt_info {
+    margin: 0 0 clamp(50px, 9vw, 90px) 0;
+}
+.cnt_info .wrapper{
+    display: flex; /* photo - txt_wrap 좌우배치 */
+    justify-content: space-between;
+}
+.cnt_info .photo{
+    overflow: hidden;
+    height: clamp(449px, 71.2vw, 712px);
+    width: 37.15%;
+    border-radius: 30px;
+    box-shadow: 5px 5px 20px 0 rgba(0, 0, 0, 0.1);
+    margin: 72px 0 0 0;
+}
+.cnt_info .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top; /* 이미지가 짤릴때 위를 기준으로 아래가 짤림 */
+}
+.cnt_info .txt_wrap{
+    width: 57.57%;
+}
+.cnt_info .txt_wrap .tit{
+    position: relative; /* before 정렬의 기준 */
+    color: var(--color-white);
+    padding-bottom: 83px;
+}
+.cnt_info .txt_wrap .tit::before{
+    content: "";
+    position: absolute;    
+    top: 0;
+    z-index: -1; 
+    /* left: -100vw;
+    width: 200vw; */
+    right: calc(((100vw  -  var(--wrapper-w))  /  2  -  50px)  *  -1);
+    width: calc(100vw - 100px);
+    height: 100%;
+    background-color: var(--color-main);
+    border-radius: 40px;
+}
+
+.cnt_info .txt_wrap .tit h2{
+    font-size: 32px;
+    font-weight: var(--font-weight-bold);
+    padding: 126px 0 36px 0;
+}
+.cnt_info .txt_wrap .tit p{
+    font-size: 24px;
+}
+.cnt_info .txt_wrap .txt{
+    margin: 70px 0;
+}
+.cnt_info .txt_wrap .sign img{
+    width: 214px; /* 높이는 비율에 맞게 알아서 */
+}
+@media screen and (max-width:1600px){ /* 1440 + 30 + 30 + 50 + 50 */
+    .cnt_info .txt_wrap .tit::before{
+        right: calc(var(--wrapper-margin)  *  -1);
+        width: calc(100vw  -  var(--wrapper-margin)  *  2);
+        border-radius: var(--wrapper-margin);
+    }
+    .cnt_info .wrapper{
+        width: auto;
+        margin: 0 calc(var(--wrapper-margin) * 2);
+    }
+}
+@media screen and (max-width:1024px){
+                .cnt_info .wrapper{
+                    display: block; /* flex 해제 */
+                    margin: 0 var(--wrapper-margin);
+                }
+                .cnt_info .photo{
+                    width: 100%;
+                    max-width: 600px;
+                    border-radius: 15px;
+                    margin: 0 auto;
+                }
+                .cnt_info .txt_wrap{
+                    width: auto;
+                }
+                .cnt_info .txt_wrap .tit{
+                    padding-bottom: 48px;
+                }
+                .cnt_info .txt_wrap .tit::before{
+                    top: -177px;
+                    right: calc(var(--wrapper-margin) * -1);
+                    width: 100vw;
+                    height: calc(100% + 177px);
+                    border-radius: 0;
+                }
+                .cnt_info .txt_wrap .tit h2{
+                    font-size: 24px;
+                    padding: 77px 0 16px 0;
+                }
+                .cnt_info .txt_wrap .tit p{
+                    font-size: 16px;
+                }
+                .cnt_info .txt_wrap .txt{
+                    margin: 29px 0 34px 0;
+                }
+                .cnt_info .txt_wrap .sign img{
+                    width: 128px; /* 높이는 비율에 맞게 알아서 */
+                }
+}
