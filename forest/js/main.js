@@ -25,4 +25,4 @@ $(document).ready(function(){
 		responsiveWidth: 769, /* fullpage를 적용시키지 않을 모바일 사이즈 */
         responsiveHeight: 500 /* 브라우저 높이가  500보다 낮으면 fullpage 안함*/
 	});
-})//document
+})//$(document).ready
