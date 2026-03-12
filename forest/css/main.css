@@ -3,27 +3,148 @@
 @import url(common.css);
 @import url(layout.css);
 
-.section{
-    font-size: 50px;
+.visual .swiper{
+    width: 100vw;
+}
+.visual .swiper-slide{
+    height: 100dvh;
+    display: flex; /* visual_txt를 정렬하려고 */
+    flex-direction: column;
+    justify-content: center;
+}
+.visual .swiper-slide .photo,
+.visual .swiper-slide .video{
+    position: absolute; /*.swiper-slide를 기준으로 정렬*/
+    left: 0;
+    top: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.visual .swiper-slide .photo img,
+.visual .swiper-slide .video video,
+.visual .swiper-slide .video video source{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.visual .swiper-slide .photo img{
+    transform: scale3d(1.125, 1.125, 1);
+    transition: transform 3s;
+}
+.visual .swiper-slide.swiper-slide-active .photo img{
+    transform: scale3d(1, 1, 1);
+}
+.visual .swiper-slide .visual_txt{
+    font-size: clamp(32px, 7vw, 80px);
     font-weight: 800;
+    color: #fff;
+    line-height: 1.3;
     text-align: center;
 }
-
-.visual{
-    background-color: #073C51;
-    color: #fff;
+.visual .swiper-slide .visual_txt .line{
+    overflow: hidden;
 }
-.tree{
-    background-color: #fff;
-
+.visual .swiper-slide .visual_txt .line:first-child span{
+    transition-delay: 0.3s;
 }
+.visual .swiper-slide .visual_txt .line:last-child span{
+    transition-delay: 0.5s;
+}
+.visual .swiper-slide .visual_txt .line span{
+    display: block;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+    transition-delay: 0.3s;
+}
+.visual .swiper-slide.swiper-slide-active .visual_txt .line span{
+    transform: translateY(0);
+}
+
+.tree .wrapper{
+    display: flex; /* txt - photo 좌우배치 */
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 100px;
+}
+.tree .txt h2{
+    display: flex; /* 좌우정렬 */
+    color: #00804D;
+}
+.tree .txt h2 strong{
+    font-size: 100px;
+    font-weight: 800;
+    line-height: 1.3;
+}
+.tree .txt h2 span{
+    margin: 15px 0 0 5px;
+    font-size: 24px;
+    font-weight: 800;
+}
+.tree .txt .sub_tit{
+    font-size: 20px;
+    font-weight: 800;
+    color: #1D1D1D;
+}
+.tree .photo{
+    width: 59.84%;
+    position: relative; /*나무 정렬의 기준*/
+}
+.tree .photo .tree{
+    width: 88.73%;
+}
+.tree .photo .leaf{
+    position: absolute; /*photo를 기준으로*/
+    right: 35%;
+    bottom: 38%;
+    width: 8.09%;
+    animation: tree_down 5s ease infinite;
+}
+@keyframes tree_down {
+    0%{transform: translate(0, 0); opacity: 1;}
+    90%{transform: translate(100%, 200%); opacity: 0;}
+    100%{transform: translate(100%, 200%); opacity: 0;}
+}
+.tree .photo .sun{
+    position: absolute; /*photo를 기준으로*/
+    right: 65px;
+    top: -3%;
+    width: 27.72%;
+    animation: tree_rotate 3s linear infinite;
+}
+@keyframes tree_rotate {
+    0%{transform: rotate(0); opacity: 0;}
+    50%{transform: rotate(180deg); opacity: 1;}
+    100%{transform: rotate(360deg); opacity: 0;}
+}
+.tree .photo .cloud01{
+    position: absolute;/*photo를 기준으로*/
+    right: 5%;
+    top: 15%;
+    width: 46.95%;
+    animation: tree_right 5s linear infinite;
+}
+
+.tree .photo .cloud02{
+    position: absolute; /*photo를 기준으로*/
+    left: 0;
+    top: 38%;
+    width: 32.23%;
+    animation: tree_right 5s linear infinite;
+}
+@keyframes tree_right{
+    0%{transform: translateX(0); opacity: 1;}
+    50%{transform: translateX(10%); opacity: 0;}
+    100%{transform: translateX(0%); opacity: 1;}
+}
+
 .biz{
     background-color: #073C51;
     color: #fff;
 }
 
 .story{
-    background-color: #fff;
 }
 
 .footer{

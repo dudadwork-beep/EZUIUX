@@ -20,18 +20,24 @@ $(document).ready(function(){
 			if(destination.index == 0){ /* index가 2면 슬라이드는 세번째 슬라이드입니다. index 수는 0/1/2/3 */
 				// console.log('1번째 슬라이드가 로딩 되었을때v'); - ' ' 아무것도 없어도 따옴표 있어야 함.
 				$('.sec_nav').attr('data-bg','')
+				$('.header').attr('data-bg','')
 			}else if(destination.index == 1){
 				// console.log('2번째 슬라이드가 로딩 되었을때');
 				$('.sec_nav').attr('data-bg','white')
+				$('.header').attr('data-bg','white')
+				$('.tree .counter').counterUp(); /* 숫자 요소의 클래스명을 써준다. */
 			}else if(destination.index == 2){
-				$('.sec_nav').attr('data-bg','')
 				//console.log('3번째 슬라이드가 로딩 되었을때v');
+				$('.sec_nav').attr('data-bg','')
+				$('.header').attr('data-bg','')
 			}else if(destination.index == 3){
 				// console.log('4번째 슬라이드가 로딩 되었을때');
 				$('.sec_nav').attr('data-bg', 'white')
+				$('.header').attr('data-bg', 'white')
 			}else if(destination.index == 4){
 				// console.log('5번째 슬라이드가 로딩 되었을때v');
 				$('.sec_nav').attr('data-bg', 'none')
+				$('.header').attr('data-bg', 'none')
 			}
 		},
 
@@ -50,4 +56,21 @@ $(document).ready(function(){
 		$('.quick .open').show()
 		$('.quick .quick_wrap').slideUp()
 	})
+
+	/* visual의 swiper 시작*/
+	const visual_swiper = new Swiper('.visual .swiper', { /* 팝업을 감싼는 요소의 class명 */
+
+			autoplay: {  /* 팝업 자동 실행 */
+				delay: 2500,
+				disableOnInteraction: true,
+			},
+
+			effect: "fade", /* fade 효과 */
+
+			loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+
+			});
+			/* visual의 swiper 끝*/
+
+
 })//$(document).ready
