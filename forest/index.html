@@ -7,37 +7,71 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullPage.js/4.0.37/fullpage.css">
     <script src="js/jquery-3.7.1.min.js"></script>
 
+    <link rel="shortcut icon" href="favicon.svg" type="image/x-icon">
     <link rel="stylesheet" href="css/main.css">
     <script src="js/common.js"></script>
     <script src="js/main.js"></script>
     <title>생명의숲</title>
 </head>
 <body>
+    <header class="header">
+        <div class="wrapper">
+            <h1 class="logo"><a href="index.html"><span class="sr-only">생명의숲 로고</span></a></h1>
+            <nav class="gnb">
+                <button class="gnb_open"><span>메뉴열기</span></button>
+                <div class="gnb_wrap">
+                    <ul class="depth1">
+                        <li><a href="#n"><span>소개</span></a></li>
+                        <li><a href="#n"><span>활동</span></a></li>
+                        <li><a href="#n"><span>참여와후원</span></a></li>
+                        <li><a href="#n"><span>자료실</span></a></li>
+                    </ul>
+                </div>
+            </nav>
+            <div class="util">
+                <a href="#n" class="mypage"><span>마이페이지</span></a>
+                <div class="search"><button class="search_open">검색열기</button></div>
+            </div>
+        </div>
+    </header>
     <div id="fullpage"> 
             <!-----//"section fp-auto-height-responsive" 모바일에서는 fullpage안함!-->
         <section class="section visual fp-auto-height-responsive">
-            1.visual
+            <div class="wrapper">1.visual</div>
         </section><!--//visual-->
         <section class="section tree fp-auto-height-responsive">
-            2.tree<br>2.tree<br>2.tree<br>2.tree<br>2.tree<br>
+            <div class="wrapper">2.tree</div>
         </section><!--//tree-->
         <section class="section biz fp-auto-height-responsive">
-            3.biz
+            <div class="wrapper">3.biz</div>
         </section><!--//biz-->
         <section class="section story fp-auto-height-responsive">
-            4.story
+            <div class="wrapper">4.story</div>
         </section><!--//story-->
         <footer class="footer section fp-auto-height">
-            5.footer
+            <div class="wrapper">5.footer</div>
         </footer>
     </div> <!--//fullpage-->
-    <aside class="link">
+    <!-- data-속성이런 속성은 내가 맘대로 만들어낸 속성 class에 쓰기에는 지웠다가 썼다가 하기
+     귀찮고 그래서 jquery에서 값을 마음대로 쓰려고 준것-->
+    <aside class="sec_nav" data-bg="none"> 
         <ul>
-            <li><a href="#main">Main</a></li>
-            <li><a href="#tree">나무심기</a></li>
-            <li><a href="#biz">숲 활동</a></li>
-            <li><a href="#story">숲이야기</a></li>
+            <li class="active"><a href="#main"><span>Main</span></a></li>
+            <li><a href="#tree"><span>나무심기</span></a></li>
+            <li><a href="#biz"><span>숲 활동</span></a></li>
+            <li><a href="#story"><span>숲이야기</span></a></li>
         </ul>
     </aside>
+    <aside class="quick" data-bg="">
+        <button class="open"><span>퀵메뉴 열기</span></button>
+        <div class="quick_wrap">
+            <ul>
+                <li class="kakao"><a href="#n"><span>같이가치</span></a></li>
+                <li class="naver"><a href="#n"><span>해피빈</span></a></li>
+                <li class="green"><a href="#n"><span>그린짐</span></a></li>
+                <li class="top"><button><span>TOP</span></button></li>
+            </ul>
+        </div>
+        <button class="close"><span>퀵메뉴 닫기</span></button>
 </body>
 </html>

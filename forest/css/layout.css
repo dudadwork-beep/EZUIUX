@@ -1,0 +1,38 @@
+/* layout.css는 header와 footer 처럼 모든 페이지에 들어가는 요소 */
+
+
+
+
+.header{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 100;
+    width: 100%;
+    height: 90px;
+    color: #fff;
+}
+.header .wrapper{
+    display: flex; /* logo-gnb-util 좌우 */
+    justify-content: space-between;
+    align-items: center;
+}
+.header .logo a{
+    display: block;
+    width: 128px;
+    height: 29px;
+    background: url(../images/common/logo_w.svg) no-repeat center center / contain ;    
+}
+.header .gnb_open{
+    display: none;
+}
+.header .gnb .gnb_wrap ul.depth1{
+    display: flex; /*li 좌우배치 */
+}
+.header .gnb .gnb_wrap ul.depth1 > li > a{
+    display: block;
+    line-height: 90px;
+    font-size: 20px;
+    font-weight: 800;
+    padding: 0 24px;
+}

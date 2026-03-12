@@ -8,12 +8,23 @@ body, html{
      word-wrap: break-word; /* 단어가 제한된 넓이보다 길면 강제 줄바꿈 */
 }
 .wrapper{
-    width: 1260;
+    width: 1260px;
     margin: 0 auto; /* 가운데 */
 }
-@media screen and (max-width:1320px) { /* 1260 + 30 + 30*/
+@media screen and (max-width: 1530px) { /*1530 -1260 = 270/2 = 135 px*/
     .wrapper{
     width: auto; /* 브라우저의 넓이에 맞게 알아서 */
-    margin: 0 30px; /* 이제 좌우여백이 고정으로 변경 */
+    margin: 0 135px; /* 이제 좌우여백이 고정으로 변경 */
     }
+}
+.sr-only {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+    clip-path: inset(0px 0px 99.9% 99.9%);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
 }
