@@ -115,8 +115,7 @@
 }
 @keyframes tree_rotate {
     0%{transform: rotate(0); opacity: 0;}
-    50%{transform: rotate(180deg); opacity: 1;}
-    100%{transform: rotate(360deg); opacity: 0;}
+    100%{transform: rotate(90deg); opacity: 1;}
 }
 .tree .photo .cloud01{
     position: absolute;/*photo를 기준으로*/
