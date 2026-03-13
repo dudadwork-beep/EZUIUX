@@ -19,6 +19,8 @@
     display: flex; /* logo-gnb-util 좌우 */
     justify-content: space-between;
     align-items: center;
+    width: auto;
+     margin: 0 clamp(16px,3vw,30px);
 }
 .header .logo a{
     display: block;
