@@ -20,7 +20,7 @@ $(document).ready(function(){
 			if(destination.index == 0){ /* index가 2면 슬라이드는 세번째 슬라이드입니다. index 수는 0/1/2/3 */
 				// console.log('1번째 슬라이드가 로딩 되었을때v'); - ' ' 아무것도 없어도 따옴표 있어야 함.
 				$('.sec_nav').attr('data-bg','')
-				$('.header').attr('data-bg','ㅡㅐ')
+				$('.header').attr('data-bg','')
 			}else if(destination.index == 1){
 				// console.log('2번째 슬라이드가 로딩 되었을때');
 				$('.sec_nav').attr('data-bg','white')
