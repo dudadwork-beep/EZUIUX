@@ -11,15 +11,10 @@ body, html{
     width: 1260px;
     margin: 0 auto; /* 가운데 */
 }
-@media screen and (max-width: 1530px) { /*1530 -1260 = 270/2 = 135 px*/
+@media screen and (max-width: 1430px) { /*1260 + 85 + 85 =1430*/
     .wrapper{
     width: auto; /* 브라우저의 넓이에 맞게 알아서 */
-    margin: 0 135px; /* 이제 좌우여백이 고정으로 변경 */
-    }
-}
-@media screen and (max-width: 1024px) { 
-    .wrapper{
-        margin: 0 clamp( 16px,3vw,30px);
+    margin: 0 clamp(16px, 8.5vw, 85px); /* 이제 좌우여백이 고정으로 변경 */
     }
 }
 .sr-only {
@@ -32,4 +27,14 @@ body, html{
     width: 1px;
     padding: 0;
     border: 0;
+}
+
+:root {
+    --header-h: 90px;
+    --color-main: #4D1A00;
+    --color-point: #B32000;
+    --font-main-color: #1d1d1d;
+    --font-sub-color: #3d3d3d;
+    --color-bg: #F0E7C8;
+    --color-w: #fff;
 }
