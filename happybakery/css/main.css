@@ -2,6 +2,7 @@
 @import url(fonts.css);
 @import url(common.css);
 
+/*************************hearder 시작***************************/
 .header{
     position: fixed;
     display: flex;
@@ -21,6 +22,16 @@
     height: clamp(18px, 2.7vw, 27px);
     background: url(../images/common/logo_w.svg) no-repeat center center / contain ;
 }
+
+/* .header.fixed{
+    background-color: #fff;
+    color: var(--color-main);
+    fill: var(--color-main);
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.05);
+}
+.header.fixed .logo a{
+    background-image: url(../images/common/logo.svg);
+} */
 
 .header .depth1{
     display: flex;
@@ -70,7 +81,7 @@
                 display: none;
             }
 }
-
+/*************************visual 시작***************************/
 .visual{
     position: relative;
 }
@@ -146,6 +157,8 @@
     }
 }
 
+/*************************brand 시작***************************/
+
 .brand{
     height: 455px; /* 600px -145px 높이에서 패딩값을 뺌. 안그러면 둘다 합친값으로 높이가 늘어남 */
     background-color: #F0E7C8;
@@ -163,7 +176,7 @@
 .brand .wrapper h2{
     font-family: 'MaruBuri';
     color: var(--font-main-color);
-    font-size: clamp(32px,4.5vw,45px);
+    font-size: clamp(24px,4.5vw,45px);
     font-weight: 400;
     line-height: 1.3;
     margin: 0 0 20px 0;
@@ -229,23 +242,183 @@
         }
 }/*//@media*/
 
+/************************* signature 시작 ***************************/
 .signature{
-    height: 1012px;
-    margin: 198px 0 0 0;
+    margin-top: 198px;
     text-align: center;
 }
-.signature strong{
-    font-size: clamp(16px, 1.7vw, 17px);
+.signature .list{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+.signature .tit strong{
     font-weight: 800;
+    line-height: 1.5;
     color: var(--color-point);
 }
-.signature h2{
+.signature .tit h2{
     font-family: 'MaruBuri';
+    font-size: clamp(24px,4.5vw,45px);
     color: var(--font-main-color);
-    font-size: clamp(32px,4.5vw,45px);
-    font-weight: 400;
-    line-height: 1.3;
 }
-.signature p{
-    margin: 8px 0 464px 0;
+.signature .tit p{
+    margin-bottom: 135px;
+}
+.signature .photo{
+    width: 303px;
+    gap: 0 24px;
+}
+.signature h3{
+    font-size: 20px;
+    color: var(--color-main);
+}
+.signature .prev{
+    position: absolute;
+    left: -23px;
+    top: 50%;
+    fill: #666;
+}
+.signature .next{
+    position: absolute;
+    right: -23px;
+    top: 50%;
+    fill: #666;
+}
+/*************************** moment 시작 ***************************/
+.moment{
+    margin-top: 198px;
+    height: 1400px;
+    background-color: var(--color-bg);
+}
+.moment .tit{
+    padding-top: 200px;
+}
+.moment .tit strong{
+    font-size: clamp(16px,1.7vw,17px);
+    margin-top: 200px;
+    font-weight: 800;
+    line-height: 1.5;
+    color: var(--color-point);
+}
+.moment .tit h2{
+    font-family: 'MaruBuri';
+    font-size: clamp(24px,4.5vw,45px);
+    color: var(--font-main-color);
+}
+
+.moment .signature .list{
+    display: flex;
+    justify-content: space-between;
+}
+.moment .more{
+    margin-top: -57px;
+    display: flex;
+    justify-content: flex-end;
+}
+.moment .more a{
+    display: block;
+    position: relative;
+    color: var(--color-point);
+    border: 1px solid var(--color-point);
+    border-radius: 50px;
+    padding: 10px 41px 10px 23px;
+}
+.moment .more a::after{
+    content: ""; /* 아이콘 배치 */
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    width: 14px;
+    height: 14px;
+    background-image: url("data:image/svg+xml,%3Csvg width='14' height='14' viewBox='0 0 14 14' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6 8H1C0.716667 8 0.479167 7.90417 0.2875 7.7125C0.0958333 7.52083 0 7.28333 0 7C0 6.71667 0.0958333 6.47917 0.2875 6.2875C0.479167 6.09583 0.716667 6 1 6H6V1C6 0.716667 6.09583 0.479167 6.2875 0.2875C6.47917 0.0958333 6.71667 0 7 0C7.28333 0 7.52083 0.0958333 7.7125 0.2875C7.90417 0.479167 8 0.716667 8 1V6H13C13.2833 6 13.5208 6.09583 13.7125 6.2875C13.9042 6.47917 14 6.71667 14 7C14 7.28333 13.9042 7.52083 13.7125 7.7125C13.5208 7.90417 13.2833 8 13 8H8V13C8 13.2833 7.90417 13.5208 7.7125 13.7125C7.52083 13.9042 7.28333 14 7 14C6.71667 14 6.47917 13.9042 6.2875 13.7125C6.09583 13.5208 6 13.2833 6 13V8Z' fill='%23B32000'/%3E%3C/svg%3E%0A");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+.moment .list{
+    margin-top: 83px;
+}
+.moment .list ul{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+}
+.moment .list ul li{
+    width: calc(33.33% - 16px);
+}
+.moment .list ul li a{
+    display: block;
+    position: relative; /*h3를 올리기 위한 기준*/
+}
+.moment .list ul li a .photo{
+    overflow: hidden;
+}
+.moment .list ul li a .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: top;
+}
+.moment .list ul li a h3{
+    display: none;
+    left: 0;
+    top: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: linear-gradient(180deg, rgba(77, 14, 0, 0), rgba(77, 14, 0, 1));
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.moment .list ul li a:hover h3{
+    display: flex;
+}
+.moment .list ul li a span{
+    position: relative;
+    color: #fff;
+    font-size: clamp(17px, 2.4vw, 24px);
+    font-weight: 800;
+    line-height: 1.3;
+    margin: 0 8% 8% 8%;
+    padding-right: 30px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+.moment .list ul li a span::after{
+    content: "";
+    position: absolute;
+    right: 2%;
+    bottom: 22%;
+    width: 15px;
+    height: 15px;
+    background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' viewBox='0 0 15 15' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.6143 4.05567V13.1213C12.6143 13.4592 12.7286 13.7425 12.9573 13.9712C13.1859 14.1998 13.4692 14.3141 13.8072 14.3141C14.1451 14.3141 14.4284 14.1998 14.6571 13.9712C14.8857 13.7425 15 13.4592 15 13.1213V1.19284C15 0.854871 14.8857 0.571571 14.6571 0.342942C14.4284 0.114314 14.1451 0 13.8072 0H1.87873C1.54076 0 1.25745 0.114314 1.02883 0.342942C0.800198 0.571571 0.685884 0.854871 0.685884 1.19284C0.685884 1.53082 0.800198 1.81412 1.02883 2.04274C1.25745 2.27137 1.54076 2.38569 1.87873 2.38569H10.9443L0.328032 13.002C0.109344 13.2207 0 13.499 0 13.837C0 14.175 0.109344 14.4533 0.328032 14.672C0.54672 14.8907 0.825049 15 1.16302 15C1.50099 15 1.77932 14.8907 1.99801 14.672L12.6143 4.05567Z' fill='white'/%3E%3C/svg%3E%0A");
+}
+
+@media screen and (max-width:769px){
+        .moment{
+            margin-top: 138px;
+            height: 794px;
+            background-color: var(--color-bg);
+            text-align: center;
+        }
+        .moment .wrapper strong{
+            margin: 71px 0 0 0;
+        }
+        .moment .wrapper h2{
+            margin: 1px 0 0 0;
+        }
+        .moment .more{
+            margin: 49px 0 0 0;
+            justify-content: center;
+        }
+        .moment .more a{
+            padding: 10px 43px 10px 23px;
+        }
+        
+}
+/************* footer  **************/
+.footer{
+    margin: 0 0 300px 0;
 }
