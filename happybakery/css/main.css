@@ -156,7 +156,7 @@
         padding-right: 16px;
     }
 }
-
+/*** header fiex 해야함 ***/
 /*************************brand 시작***************************/
 
 .brand{
@@ -244,7 +244,7 @@
 
 /************************* signature 시작 ***************************/
 .signature{
-    margin-top: 198px;
+    margin-top: clamp(69px,19vw,198px);
     text-align: center;
 }
 .signature .list{
@@ -263,14 +263,14 @@
     color: var(--font-main-color);
 }
 .signature .tit p{
-    margin-bottom: 135px;
+    margin-bottom: clamp(29px, 13vw, 135px);
 }
 .signature .photo{
-    width: 303px;
-    gap: 0 24px;
+    width: clamp(245px,30vw,303px);
+    gap: 0 clamp(16px,2.4vw,24px);
 }
 .signature h3{
-    font-size: 20px;
+    font-size: clamp(16px, 2vw, 20px);
     color: var(--color-main);
 }
 .signature .prev{
@@ -285,6 +285,11 @@
     top: 50%;
     fill: #666;
 }
+@media screen and (max-width:769px){
+        /* 확인 후 이미지 1개 정중앙 양옆은 짤리게, < & > 는 안나오게 */
+}
+
+/*** 시그니처 반응형 모바일 해야함 ***/
 /*************************** moment 시작 ***************************/
 .moment{
     margin-top: 198px;
@@ -312,7 +317,7 @@
     justify-content: space-between;
 }
 .moment .more{
-    margin-top: -57px;
+    margin-top: -80%;
     display: flex;
     justify-content: flex-end;
 }
@@ -337,12 +342,12 @@
     background-size: contain;
 }
 .moment .list{
-    margin-top: 83px;
+    margin-top: clamp(29px,8.3vw,83px);
 }
 .moment .list ul{
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: clamp(16px,2.4vw,24px);
 }
 .moment .list ul li{
     width: calc(33.33% - 16px);
@@ -398,19 +403,27 @@
 
 @media screen and (max-width:769px){
         .moment{
-            margin-top: 138px;
+            margin-top: 67px;
             height: 794px;
             background-color: var(--color-bg);
             text-align: center;
         }
-        .moment .wrapper strong{
-            margin: 71px 0 0 0;
+        .moment .tit{
+            padding-top: 71px;
         }
-        .moment .wrapper h2{
-            margin: 1px 0 0 0;
+        .moment .list ul li{
+            width: calc(50% - 16px);
         }
-        .moment .more{
-            margin: 49px 0 0 0;
+        .moment .list ul li a .photo img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            vertical-align: top;
+        }
+        
+        .moment .more{ /*안내려감 내려야함*/
+            margin-bottom: -57%;
+            display: flex;
             justify-content: center;
         }
         .moment .more a{
