@@ -23,7 +23,7 @@
     background: url(../images/common/logo_w.svg) no-repeat center center / contain ;
 }
 
-/* .header.fixed{
+.header.fixed{
     background-color: #fff;
     color: var(--color-main);
     fill: var(--color-main);
@@ -31,7 +31,7 @@
 }
 .header.fixed .logo a{
     background-image: url(../images/common/logo.svg);
-} */
+}
 
 .header .depth1{
     display: flex;
@@ -247,10 +247,13 @@
     margin-top: clamp(69px,19vw,198px);
     text-align: center;
 }
+.signature .wrapper{
+    position: relative;
+}
 .signature .list{
     display: flex;
     justify-content: space-between;
-    position: relative;
+    gap: 0 clamp(16px,2.4vw,24px); /* 바꿈 */
 }
 .signature .tit strong{
     font-weight: 800;
@@ -265,39 +268,55 @@
 .signature .tit p{
     margin-bottom: clamp(29px, 13vw, 135px);
 }
-.signature .photo{
-    width: clamp(245px,30vw,303px);
-    gap: 0 clamp(16px,2.4vw,24px);
+.signature .photo img{
+    width: clamp(245px, 30vw, 303px);
+    height: auto;
+    object-fit: cover;
 }
-.signature h3{
+.signature .swiper-slide h3{
     font-size: clamp(16px, 2vw, 20px);
     color: var(--color-main);
 }
 .signature .prev{
     position: absolute;
-    left: -23px;
-    top: 50%;
+    left: -30px;
+    top: 385px;
     fill: #666;
 }
 .signature .next{
     position: absolute;
-    right: -23px;
-    top: 50%;
+    right: -30px;
+    top: 385px;
     fill: #666;
 }
-@media screen and (max-width:769px){
-        /* 확인 후 이미지 1개 정중앙 양옆은 짤리게, < & > 는 안나오게 */
+@media screen and (max-width:1369px){
+        .signature .prev,
+        .signature .next{
+          display: none;
+        }
 }
+@media screen and (max-width:769px){
+        /* 확인 후 이미지 1개 정중앙 양옆은 짤리게, < & > 는 안나오게
+        js 건들고, < & >는 안보이게 처리...하기 ? */
 
-/*** 시그니처 반응형 모바일 해야함 ***/
+        .signature .tit p{
+        display: none;
+        }
+        .signature .photo h3{
+            font-size: clamp(16px, 2vw, 20px);
+            color: var(--color-main);
+        }
+        
+}
 /*************************** moment 시작 ***************************/
 .moment{
     margin-top: 198px;
-    height: 1400px;
+    padding: clamp(71px,20vw,200px) 0 clamp(139px,18vw,181px) 0;
     background-color: var(--color-bg);
+    
 }
-.moment .tit{
-    padding-top: 200px;
+.moment .wrapper{
+    position: relative; /*more 더보기 버튼의 기준*/
 }
 .moment .tit strong{
     font-size: clamp(16px,1.7vw,17px);
@@ -316,8 +335,10 @@
     display: flex;
     justify-content: space-between;
 }
-.moment .more{
-    margin-top: -80%;
+.moment .more{ /*absolute 써서*/
+    right: 0;
+    top: 40px;
+    position: absolute;
     display: flex;
     justify-content: flex-end;
 }
@@ -404,7 +425,6 @@
 @media screen and (max-width:769px){
         .moment{
             margin-top: 67px;
-            height: 794px;
             background-color: var(--color-bg);
             text-align: center;
         }
@@ -421,13 +441,12 @@
             vertical-align: top;
         }
         
-        .moment .more{ /*안내려감 내려야함*/
-            margin-bottom: -57%;
-            display: flex;
+        .moment .more{ /*absolute 써서*/
+            right: auto;
+            top: auto;
+            position: relative;
             justify-content: center;
-        }
-        .moment .more a{
-            padding: 10px 43px 10px 23px;
+            margin-top: 37px;
         }
         
 }
