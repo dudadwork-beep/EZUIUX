@@ -1,4 +1,4 @@
-@import url(reset.css);
+@import url(default.css);
 @import url(fonts.css);
 @import url(common.css);
 
@@ -252,9 +252,9 @@
 /*************************brand 시작***************************/
 
 .brand{
-    height: 455px; /* 600px -145px 높이에서 패딩값을 뺌. 안그러면 둘다 합친값으로 높이가 늘어남 */
+    height: 600px; 
     background-color: #F0E7C8;
-    padding-top: 145px;
+    padding: 145px 0 166px 0;
     background-image: url(../images/main/hand_bg.png);
     background-position: center right 20%;
     background-repeat: no-repeat;
@@ -595,11 +595,43 @@
     color: var(--font-main-color);
 }
 
-.location .signature .list{
+.location .wrapper .list{
     display: flex;
     justify-content: space-between;
+    margin-top: 99px;
+    gap: 0 24px;
+    color: #fff;
+    position: relative;
 }
-
+.location .wrapper .list .store01{
+    width: 100%;
+    height: 100%;
+    padding: 386px 0 117px 0;
+    background: url(../images/main/store01.jpg);
+    border-radius: 30px;
+}
+.location .wrapper .list .store02{
+    width: 100%;
+    height: 100%;
+    padding: 386px 0 117px 0;
+    background: url(../images/main/store02.jpg);
+    border-radius: 30px ;
+}
+.location .list h3{
+    font-size: 45px;
+    font-weight: 800;
+}
+.location .list p{
+    white-space: nowrap;
+}
+.location .more{
+    position: absolute;
+    margin-top: 33px;
+    border: 1px solid var(--color-point);
+    background-color: var(--color-point);
+    border-radius: 50px;
+    padding: 10px 41px 10px 23px;
+}
 /************* footer  **************/
 .footer{
     margin: 0 0 300px 0;
