@@ -653,7 +653,6 @@
             }
 
             .location .list ul li a:hover .photo{
-                transition: 0;
                 border-radius: 30px;
             }
             .location .list ul li a .photo img{
