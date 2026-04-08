@@ -40,4 +40,6 @@ body, html{
     --color-bg-2:#D8E4FF;
     --font-color-1:#1d1d1d;
     --font-color-2:#3d3d3d;
+    --font-family-G: 'GMarketSans';
+    --line-height-M: '1.5';
 }
