@@ -59,3 +59,4 @@ $(document).ready(function(){
         $('.popup .ctrl_wrap .stop').show()
     })
 })
+/****************!!MD(md픽) swiper!!**************** */

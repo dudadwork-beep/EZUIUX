@@ -69,7 +69,7 @@
                 display: block;
                 color: var(--font-color-1);
                 padding: 0 24px;
-                font-size: 20px;
+                font-size: clamp(18px, 2vw, 20px);
                 font-weight: 700;
                 height: 60px;
                 text-align: center;
@@ -88,7 +88,8 @@
                 text-align: center;
                 background-color: rgba(255, 255, 255, 0.9);
                 padding: 20px 16px;
-                font-size: 20px;
+                font-size: clamp(16px, 2vw, 20px);
+                z-index: 2; /* 가려져서 안보여서 넣음 */
             }
             .header .gnb_wrap ul.depth1 > li > ul.depth2 > li > a:hover{
                 color: var(--color-point);
@@ -252,7 +253,73 @@
     background: url(../images/main/next.svg) no-repeat center center / contain;
 }
 @media screen and (max-width:1440px){ /*prev, next 버튼 사라지기 + 768에서 mo이미지 체인지!*/
-            .popup .prev,.popup .next{
+           .popup .ctrl_wrap, .popup .prev, .popup .next{
                 display: none;
             }
+}
+@media screen and (max-width:768px){
+            .popup{
+                margin: 0 16px;
+            }
+            .popup .swiper-slide a .pc{
+                display: none;
+            }
+            .popup .swiper-slide a .mo{
+                display: block;
+            }
+}
+/************************service 시작***************************/
+.service{
+    margin: clamp(35px, 7.5vw, 75px) 0;
+}
+.service ul{
+    display: flex;
+    justify-content: center;
+    gap: 0 10px;
+}
+.service ul li{
+    max-width: 128px;
+    width: calc(16.66% - 8.33px); /*★*/
+ }
+.service ul li a{
+    display: block;
+}
+.service ul li a .photo{
+    display: flex;
+    height: 128px;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+}
+.service ul li a:hover .photo{
+    background-color: var(--color-bg-2);
+}
+.service ul li a .photo img{
+    max-width: 80%;
+}
+.service ul li a h3{
+    margin-top: 7px;
+    font-size: clamp(16px, 2vw, 20px);
+    text-align: center;
+    color: var(--font-color-1);
+}
+
+@media screen and (max-width:768px){
+        .service ul{
+            flex-wrap: wrap;
+            gap: 0;
+        }
+        .service ul li{
+            max-width: 100%;
+            width: 33.33%; /*3개라서*/
+        }
+        .service ul li a .photo{
+            height:  auto;
+        }
+        .service ul li a:hover .photo{
+            background-color: transparent;
+        }
+        .service ul li a .photo img{
+            max-width: 60%;
+        }
 }
