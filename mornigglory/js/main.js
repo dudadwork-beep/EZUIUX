@@ -77,4 +77,33 @@ $(document).ready(function(){
         // }
     });
 
+/******************!!time  swiper!!******************** */
+    var time_swiper = new Swiper(".time .swiper", {
+        
+        slidesPerView: 1,
+        spaceBetween: 16,
+        grid: {
+            rows: 1,
+        },
+        spaceBetween: 24,	
+        breakpoints: {
+            1100: {    /* 769px 이상일때 적용 */
+                slidesPerView: 2,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 24,
+                grid: {
+                    rows: 1,
+                    fill: 'row',
+                },
+            },
+            1137: {    /* 769px 이상일때 적용 */
+                slidesPerView: 2,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 24,
+                grid: {
+                    rows: 2,
+                    fill: 'row',
+                },
+            },
+        },
+    })
+    
 })
