@@ -87,8 +87,16 @@ $(document).ready(function(){
         },
         spaceBetween: 24,	
         breakpoints: {
-            1100: {    /* 769px 이상일때 적용 */
+             573: {    /* 769px 이상일때 적용 */
                 slidesPerView: 2,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 24,
+                grid: {
+                    rows: 1,
+                    fill: 'row',
+                },
+            },
+            1134: {    /* 769px 이상일때 적용 */
+                slidesPerView: 4,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
                 spaceBetween: 24,
                 grid: {
                     rows: 1,
@@ -105,5 +113,15 @@ $(document).ready(function(){
             },
         },
     })
-    
+ /******************!!best  swiper!!******************** */
+      const best_swiper = new Swiper('.best .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            1025: {    /* 1025px 이상일때 적용 */
+                slidesPerView: 5,    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 20,
+            },
+        },
+    });
 })
