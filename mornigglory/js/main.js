@@ -158,4 +158,11 @@ $(document).ready(function(){
     swiperContainer.addEventListener('mouseleave', () => {
         insta_swiper.autoplay.start(); // 자동 재생 시작
 });
+/***************!!top button!!**************/
+    $('.footer .top').on('click', function(){
+        // console.log('클릭')
+        $('html,body').animate({
+            scrollTop: 0
+        },500)
+    })
 })
