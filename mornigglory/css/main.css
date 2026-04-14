@@ -833,7 +833,7 @@
 }
 /*********************/
 .footer{
-    margin: 157px 0 18px 0;
+    margin-top: 157px;
     position: relative; /*top 버튼의 기준*/
 }
 .footer .top{
@@ -885,4 +885,71 @@
 }
 .footer .f_nav ul li:last-child::after{
     display: none;
+}
+.footer .f_conts .wrapper{
+    position: relative; /*.f_right의 기준삼음*/
+}
+.footer .f_conts .f_left{
+    margin-top: 38px;
+}
+.footer .f_conts .f_left .tel{
+    display: flex;
+    flex-direction: column;
+    color: rgba(29, 29, 29, 0.8);
+}
+.footer .f_conts .f_left .tel strong{
+    font-size: 30px;
+    color: #3d3d3d;
+    font-weight: 700;
+}
+.footer .f_conts .f_info{
+    margin-top: 50px;
+    position: relative; /*f_info::after의 기준삼음*/
+    display: flex;
+    flex-direction: column;
+}
+.footer .f_conts .f_info::after{
+    content: "";
+    position: absolute;
+    bottom: -30%;
+    right: 50%;
+    width: 1px;
+    height: 284px;
+    background-color:rgba(204, 204, 204, 0.6);
+}
+.footer .f_conts .f_right{
+    position: absolute;
+    top: 40px;
+    right: 0;
+}
+.footer .f_conts .f_right .address{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: rgba(29, 29, 29, 0.8);
+}
+.footer .f_conts .f_right .f_logo{
+    margin-top: 52px;
+    display: flex;
+    justify-content: center;
+}
+.footer .f_conts .f_right .f_logo img{
+    width: 303px;
+    height: 70.7px;
+}
+.copyright{
+    margin-top: 23px;
+    position: relative;
+    display: flex;
+}
+.copyright::after{
+    content: "";
+    position:absolute;
+    width: 100%;
+    height: 1px;
+    background-color:rgba(204, 204, 204, 0.6);
+}
+.copyright p{
+    padding: 15px 0;
+    color: #ccc;
 }
