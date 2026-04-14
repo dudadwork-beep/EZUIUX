@@ -768,62 +768,70 @@
             }
 }/*//@media*/
 /******************live**************/
-/* 전체 섹션 설정 (특정 구간) */
-.live {
-    width: 100%;
-    background-color: #000; /* 섹션 전체를 검은색으로 채워 쏠림 방지 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+/* 영상을 감싸는 부모 컨테이너 */
+.live{
     margin-top: 232px;
 }
-.live .video-container { /* 영상 비율을 유지하는 컨테이너 */
-    width: 100%;
-    height: 80vh; 
+.live .video-container {
     position: relative;
-    background-color: #000;
-    /* 내부 요소(iframe)를 중앙에 배치하기 위한 설정 */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 100%;          /* 부모 너비에 꽉 차게 */
+    height: 0;            /* 높이는 0으로 초기화 */
+    padding-bottom: 56.25%; /* 16:9 비율 계산 (9 / 16 * 100) */
+    overflow: hidden;
 }
-.live .video-container iframe { /* iframe을 컨테이너에 꽉 채우기 */
+.live .video-container iframe { /* 내부의 iframe */
     position: absolute;
-    top: 50%; /* 상단에서 50% 내려옴 */
-    left: 50%; /* 왼쪽에서 50% 밀어냄 */
-    transform: translate(-50%, -50%); /* 정확히 정중앙으로 당김 */
-    
+    top: 0;
+    left: 0;
+    width: 100%;          /* 컨테이너 너비에 꽉 차게 */
+    height: 100%;         /* 컨테이너 높이에 꽉 차게 */
+    border: 0;
+}
+
+/********! insta 섹션 시작!  - 있다가 처음부터 자세히 수정!! 12: 23********/
+.insta{
+    margin-top: clamp(96px, 17vw, 174px);
+}
+.insta .tit{
+    text-align: center;
+}
+.insta .tit h2{
+    font-family: var(--font-family-G);
+    font-weight: 700;
+    font-size: clamp(24px, 4vw, 45px);
+    line-height: var(--line-height-M);
+    color: var(--font-color-1);
+}
+.insta .tit p{
+    font-size: clamp(16px, 1vw, 17px);
+}
+.insta .list{
+    margin-top: clamp(48px, 7vw, 74px);
+}
+.insta .list .swiper .swiper-slide {
+    width: 256px;
+    height: 256px;
+}
+
+/* 이미지 기본 스타일 */
+.insta .list .swiper .swiper-slide .photo{
     width: 100%;
     height: 100%;
-    
-    /* 비율 유지 설정 */
-    aspect-ratio: 16 / 9; 
-    max-height: 100%;
-    max-width: calc(80vh * 1.777); 
-    
-    border: none;
-    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5);
+    object-fit: cover;
 }
-/* 모바일용 간격 조정ㄱ */
-@media (max-width: 768px) {
-    .live {
-        margin-top: 130px;
-    }
-    .live .video-container {
-        height: auto;
-        padding-bottom: 56.25%; /* 모바일에서 16:9 비율 강제 유지 */
-    }
-    .live .video-container iframe {
-        /* 모바일에서는 중앙 정렬 해제하고 꽉 채우기 */
-        top: 0;
-        left: 0;
-        transform: none;
-        max-width: 100%;
-        max-height: 100%;
-    }
-}/*//@media*/
-/****************/
+.insta .list .swiper .swiper-slide .photo img{
+    border-radius: 10%;
+}
+/* 동그라미 사진용 스타일 */
+.insta .list .swiper .swiper-slide.circle .photo img {
+    border-radius: 50%;
+}
+
+/* 부드러운 흐름을 위한 리니어 설정 */
+.insta .list .swiper .swiper-wrapper {
+    transition-timing-function: linear !important;
+}
+/*********************/
 body{
     margin: 0 0 500px 0;
 }

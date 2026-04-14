@@ -34,6 +34,10 @@ $(document).ready(function(){
                 spaceBetween: 100,
             },
         },
+        autoplay: {  /* 팝업 자동 실행 */
+		delay: 5000,
+		disableOnInteraction: true,
+	    },
         centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
         loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
         pagination: {  /* 몇개의 팝업이 있는지 보여주는 동그라미 */
@@ -125,5 +129,33 @@ $(document).ready(function(){
         },
     });
 
-/****************************** */    
+/****************!!insta swiper!!************** */
+    const insta_swiper = new Swiper('.insta .swiper', {
+        loop: true,
+        spaceBetween: 30,
+        slidesPerView: "auto",
+        speed: 3000,
+        autoplay: {
+            delay: 0,
+            disableOnInteraction: false,
+            // pauseOnMouseEnter는 제거하거나 유지해도 되지만, 
+            // 아래 커스텀 이벤트가 더 확실하게 즉시 멈춰줍니다.
+        },
+        freeMode: true,
+    });
+
+    // 마우스를 올렸을 때 즉시 멈춤
+    const swiperContainer = document.querySelector('.insta .swiper');
+
+    swiperContainer.addEventListener('mouseenter', () => {
+        insta_swiper.autoplay.stop(); // 자동 재생 정지
+        // 현재 움직이고 있는 wrapper의 트랜지션을 제거하여 그 자리에 고정
+        const wrapper = swiperContainer.querySelector('.swiper-wrapper');
+        wrapper.style.transitionDuration = '0ms'; 
+    });
+
+    // 마우스가 나갔을 때 다시 재생
+    swiperContainer.addEventListener('mouseleave', () => {
+        insta_swiper.autoplay.start(); // 자동 재생 시작
+});
 })
