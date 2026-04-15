@@ -1,5 +1,10 @@
 $(document).ready(function(){
-    console.log('look')
+    $('.top_bnr .top_bnr_close').on('click', function(){
+        // console.log('클릭')
+        $('.top_bnr').hide()
+    })
+/*********top_bnr*********/
+    console.log
 /**** header ***/
     let device_steus
     let window_w
@@ -29,7 +34,7 @@ $(document).ready(function(){
         slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
         spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
         breakpoints: {
-            769: {    /* 640px 이상일때 적용 */
+            769: {    /* 769px 이상일때 적용 */
                 slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
                 spaceBetween: 100,
             },
@@ -132,8 +137,8 @@ $(document).ready(function(){
 /****************!!insta swiper!!************** */
     const insta_swiper = new Swiper('.insta .swiper', {
         loop: true,
-        spaceBetween: 30,
-        slidesPerView: "auto",
+        slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+        spaceBetween: 15,
         speed: 3000,
         autoplay: {
             delay: 0,
@@ -142,6 +147,11 @@ $(document).ready(function(){
             // 아래 커스텀 이벤트가 더 확실하게 즉시 멈춰줍니다.
         },
         freeMode: true,
+        breakpoints: {
+            769: {    /* 769px 이상일때 적용 */
+                spaceBetween: 30,
+            },
+        },    
     });
 
     // 마우스를 올렸을 때 즉시 멈춤
