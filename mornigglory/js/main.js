@@ -41,11 +41,11 @@ $(document).ready(function(){
         }
     })
     $('.header .gnb .gnb_open').on('click', function(){
-        console.log('열림')
+        // console.log('열림')
         $('.header').addClass('menu_open')
     })
     $('.header .gnb .gnb_wrap .gnb_close').on('click', function(){
-        console.log('열림')
+        // console.log('닫힘')
         $('.header').removeClass('menu_open')
     })      
 /****************!!popup(비주얼) swiper!!**************** */
@@ -141,6 +141,36 @@ $(document).ready(function(){
             },
         },
     })
+    function updateCountdown() {
+    const timerElement = document.getElementById('count');
+        
+        // 1. 현재 시간 가져오기
+        const now = new Date();
+        
+        // 2. 오늘 밤 자정(내일 00:00:00) 설정하기
+        const midnight = new Date();
+        midnight.setHours(24, 0, 0, 0); // 시, 분, 초, 밀리초를 내일 0시로 세팅
+        
+        // 3. 남은 시간 계산 (밀리초 단위)
+        const diff = midnight - now;
+        
+        // 4. 시간, 분, 초 단위로 변환
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const minutes = Math.floor((diff / (1000 * 60)) % 60);
+        const seconds = Math.floor((diff / 1000) % 60);
+        
+        // 5. 한 자리 수일 때 앞에 '0' 붙여주기 (예: 9 -> 09)
+        const h = hours < 10 ? '0' + hours : hours;
+        const m = minutes < 10 ? '0' + minutes : minutes;
+        const s = seconds < 10 ? '0' + seconds : seconds;
+        
+        // 6. 화면에 출력
+        timerElement.innerText = `${h}:${m}:${s}`;
+        }
+
+    // 처음 실행 후 1초마다 반복
+    updateCountdown(); 
+    setInterval(updateCountdown, 1000);
  /******************!!best  swiper!!******************** */
       const best_swiper = new Swiper('.best .swiper', { /* 팝업을 감싼는 요소의 class명 */
         slidesPerView: 2, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */

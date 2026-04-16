@@ -504,20 +504,29 @@
         background-color: transparent;
         background: url(../images/main/bluebear.png) no-repeat left bottom / contain;
         background-size: 85%;
-
+    }
+    .time .tit .timer {
+        margin: 10px 0;
     }
     .time .tit h2, .time .tit p{
-        font-size: clamp(24px,4vw,45px);
+        font-size: clamp(24px,4vw,45px)!important;
         font-weight: 700;
         line-height: 1.3;
         color: var(--font-color-1);
     }
     /***카운터 임시 글시로 채워놓음***/
-    .time .tit .count span{
-        font-size: clamp(60px, 5vw, 100px);
-        font-weight: 700;
+    .time .tit .timer span{
+        font-size: clamp(60px, 8vw, 100px); /* 모바일에서도 시원하게 보이도록 비율 조정 */
+        font-weight: 700; /* 좀 더 두껍게 */
         line-height: 1.3;
-        color: var(--color-point);
+        color: #3753E9;
+        display: block;
+        font-variant-numeric: tabular-nums; /* 숫자가 변할 때 글자가 떨리는 현상 방지 */
+        letter-spacing: -2px; /* 숫자가 너무 벌어지면 조절 */
+        margin-left: -14px;
+        letter-spacing: -4px;
+        display: inline-block;
+        font-variant-numeric: tabular-nums;
     }
     .time .list{
         display: flex;
