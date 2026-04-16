@@ -29,6 +29,25 @@ $(document).ready(function(){
      $('.header .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
         $('.header .gnb_wrap ul.depth1 > li').removeClass('over')
     })
+/**** header menu***/
+    $('.header .gnb .gnb_wrap ul.depth1 > li').on('click', function(){
+        if($(this).hasClass('open') == true){
+            console.log('열림')
+            $(this).removeClass('open')
+        }else{
+            console.log('닫힘')
+            $('.header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
+            $(this).addClass('open')
+        }
+    })
+    $('.header .gnb .gnb_open').on('click', function(){
+        console.log('열림')
+        $('.header').addClass('menu_open')
+    })
+    $('.header .gnb .gnb_wrap .gnb_close').on('click', function(){
+        console.log('열림')
+        $('.header').removeClass('menu_open')
+    })      
 /****************!!popup(비주얼) swiper!!**************** */
    const popup_swiper = new Swiper('.popup .swiper', { /* 팝업을 감싼는 요소의 class명 */
         slidesPerView: 'auto', /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
