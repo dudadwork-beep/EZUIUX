@@ -1,0 +1,49 @@
+body, html{
+     font-family: 'Suit', sans-serif;
+     font-size: 17px;
+     font-weight: 400;
+     color: #515662;
+     line-height: 1.5;
+     word-break: keep-all; /* 단어로 줄바꿈 */
+     word-wrap: break-word; /* 단어가 제한된 넓이보다 길면 강제 줄바꿈 */
+}
+
+.wrapper{
+    width: 1284px;
+    margin: 0 auto; /* 가운데 */
+}
+@media screen and (max-width: 1344px) { /*1284 + 30 + 30 = 1320*/
+    .wrapper{
+        width: auto; /* 브라우저의 넓이에 맞게 알아서 */
+        margin: 0 30px; /* 이제 좌우여백이 고정으로 변경 */
+    }
+}
+@media screen and (max-width: 768px) {
+    .wrapper{
+        margin: 0 16px; /* 이제 좌우여백이 고정으로 변경 */
+    }
+}
+.sr-only {
+    position: absolute;
+    clip: rect(1px, 1px, 1px, 1px);
+    -webkit-clip-path: inset(0px 0px 99.9% 99.9%);
+    clip-path: inset(0px 0px 99.9% 99.9%);
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    padding: 0;
+    border: 0;
+}
+
+:root {
+    --color-point:#3753E9;
+    --color-bg:#1C52D8;
+    --color-bg2:#1486F6;
+    --font-color-1:#2E3138;
+    --font-color-w:#fff;
+    --font-color-p:#0461D8;
+    --font-color-p2:#021C8B;
+    --line-height-M: '1.3';
+    --font-family-en: "Gilda Display", serif; /*구글 영문 폰트!*/
+
+}
