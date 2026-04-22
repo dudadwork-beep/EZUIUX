@@ -23,14 +23,14 @@ $(document).ready(function(){
     })
      $('.header .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
         $('.header .gnb_wrap ul.depth1 > li').removeClass('over')
-    })
-    $('.header .util txt > li').on('mouseenter', function(){
-        $('.header .util txt > li').removeClass('over')
+    });
+    $('.header .util .lang .lang_open > .lang_wrap > ul > li').on('mouseenter', function(){
+        $('.header .util .lang .lang_open > .lang_wrap > ul > li').removeClass('over')
         $(this).addClass('over')
     })
-     $('.header .util txt > li').on('mouseleave', function(){
-        $('.header .util txt > li').removeClass('over')
-    })
+     $('.header .util .lang .lang_open > .lang_wrap > ul > li').on('mouseleave', function(){
+        $('.header .util .lang .lang_open > .lang_wrap > ul > li').removeClass('over')
+    });
 /****************!!visual swiper!!**************** */
  var delayTime = 5000; // 전환 시간 (5초)
     var visual_swiper = new Swiper(".visual .swiper", {

@@ -14,7 +14,8 @@
 </head>
     
 <body>
-    <header class="header">
+    <div id="wrap">
+        <header class="header">
         <div class="wrapper">
             <h1 class="logo"><a href="index.html"><span class="sr-only">홍익기술단로고</span></a></h1>
             <nav class="gnb">
@@ -67,76 +68,77 @@
                         </li>
                     </ul>
                     <button class="gnb_close"><span class="sr-only">메뉴닫기</span></button><!--mo에서 메뉴닫기-->
-                </div>    
+                </div>
             </nav>
             <div class="util">
-                <a href="#n" class="search"><span class="sr-only">검색</span></a>
-                <a href="#n" class="lang">
-                    <span class="sr-only">언어</span>
-                    <ul class="txt">
-                        <li>
-                            <ul class="txt_lang">
-                                <li><a href="#n"><span>KR</span></a></li>
-                                <li><a href="#n"><span>EN</span></a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </a>
-            </div>
-        </div>
-    </header><!--//header end-->
-    <main class="container">
-        <section class="visual">
-            <h2 class="sr-only">비디오팝업</h2>
-            <div class="visual_wrap">
-                <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
-                    <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
-                        <li class="swiper-slide">
-                            <video autoplay loop muted playsinline class="visual-video">
-                                <source src="images/main/video/visual_1.mp4" type="video/mp4">
-                            </video>
-                            <div class="txt">
-                                <strong>안전의 기준을 세워 미래를 지킵니다</strong>
-                                <h3>GLOBAL STANDARD</h3>
-                            </div>
-                        </li>
-                        <li class="swiper-slide">
-                            <video autoplay loop muted playsinline class="visual-video">
-                                <source src="images/main/video/visual_2.mp4" type="video/mp4">
-                            </video>
-                            <div class="txt">
-                                <strong>사람을 향한 기술, 세상을 위한 설계</strong>
-                                <h3>HUMANITY IN TECH</h3>
-                            </div>
-                        </li>   
-                        <li class="swiper-slide">
-                            <video autoplay loop muted playsinline class="visual-video">
-                                <source src="images/main/video/visual_3.mp4" type="video/mp4">
-                            </video>
-                            <div class="txt">
-                                <strong>경계를 넘어 세상을 잇는 홍익의 기술</strong>
-                                <h3>BEYOND BORDERS</h3>
-                            </div>
-                        </li>      
-                    </ul>
-                    <div class="visual_progress">
-                        <div class="bar"><span></span></div>
-                        <div class="bar"><span></span></div>
-                        <div class="bar"><span></span></div>
-                    </div>
+                <div class="search">
+                    <a href="#n" class="search_open"><span class="sr-only">검색</span></a>
                 </div>
-            </div><!--visual_wrap-->
-        </section>
-        <section class="biz">
-        </section>
-        <section class="txt_sect">
-            <div class="txt">
-                <strong>since 1990</strong>
-                <span>단군의 건국이념인 널리 인간세계를 이롭게한다는</span>
-                <span>홍익인간 정신을 계승하여 인간이 중심이 되는 세상,</span>
-                <span>자연과 인간이 공존하는 세상을 추구합니다.</span>
+                <div class="lang">
+                    <button class="lang_open"><span class="sr-only">언어선택</span></button>
+                    <div class="lang_wrap">
+                        <ul>
+                            <li><a href="#n">KR</a></li>
+                            <li><a href="#n">EN</a></li>
+                        </ul>
+                    </div>
+                </div> 
             </div>
-        </section>
-    </main>
+        </div>     
+        </header><!--//header end-->
+        <main class="container">
+            <section class="visual">
+                <h2 class="sr-only">비디오팝업</h2>
+                <div class="visual_wrap">
+                    <div class="swiper"> <!-- 팝업의 높이와 넓이를 css에서 줄 수 있는 요소 -->
+                        <ul class="swiper-wrapper"> <!-- 각 팝업 콘텐츠를 감싸는 요소 -->
+                            <li class="swiper-slide">
+                                <video autoplay loop muted playsinline class="visual-video">
+                                    <source src="images/main/video/visual_1.mp4" type="video/mp4">
+                                </video>
+                                <div class="txt">
+                                    <strong>안전의 기준을 세워 미래를 지킵니다</strong>
+                                    <h3>GLOBAL STANDARD</h3>
+                                </div>
+                            </li>
+                            <li class="swiper-slide">
+                                <video autoplay loop muted playsinline class="visual-video">
+                                    <source src="images/main/video/visual_2.mp4" type="video/mp4">
+                                </video>
+                                <div class="txt">
+                                    <strong>사람을 향한 기술, 세상을 위한 설계</strong>
+                                    <h3>HUMANITY IN TECH</h3>
+                                </div>
+                            </li>   
+                            <li class="swiper-slide">
+                                <video autoplay loop muted playsinline class="visual-video">
+                                    <source src="images/main/video/visual_3.mp4" type="video/mp4">
+                                </video>
+                                <div class="txt">
+                                    <strong>경계를 넘어 세상을 잇는 홍익의 기술</strong>
+                                    <h3>BEYOND BORDERS</h3>
+                                </div>
+                            </li>      
+                        </ul>
+                        <div class="visual_progress">
+                            <div class="bar"><span></span></div>
+                            <div class="bar"><span></span></div>
+                            <div class="bar"><span></span></div>
+                        </div>
+                    </div>
+                </div><!--visual_wrap-->
+            </section>
+            <section class="biz">
+            </section>
+            <section class="txt_sect">
+                <div class="txt">
+                    <strong>since 1990</strong>
+                    <span>단군의 건국이념인 널리 인간세계를 이롭게한다는</span>
+                    <span>홍익인간 정신을 계승하여 인간이 중심이 되는 세상,</span>
+                    <span>자연과 인간이 공존하는 세상을 추구합니다.</span>
+                </div>
+            </section>
+        </main>
+    </div><!--id wrap//end-->   
 </body>
 </html>
