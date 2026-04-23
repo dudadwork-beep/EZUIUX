@@ -24,12 +24,12 @@ $(document).ready(function(){
      $('.header .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
         $('.header .gnb_wrap ul.depth1 > li').removeClass('over')
     });
-    $('.header .util .lang .lang_open > .lang_wrap > ul > li').on('mouseenter', function(){
-        $('.header .util .lang .lang_open > .lang_wrap > ul > li').removeClass('over')
+    $('.header .util .lang > ul.lang_wrap > li').on('mouseenter', function(){
+        $('.header .util .lang > ul.lang_wrap > li').removeClass('over')
         $(this).addClass('over')
     })
-     $('.header .util .lang .lang_open > .lang_wrap > ul > li').on('mouseleave', function(){
-        $('.header .util .lang .lang_open > .lang_wrap > ul > li').removeClass('over')
+     $('.header .util .lang > ul.lang_wrap > li').on('mouseleave', function(){
+        $('.header .util .lang > ul.lang_wrap > li').removeClass('over')
     });
 /****************!!visual swiper!!**************** */
  var delayTime = 5000; // 전환 시간 (5초)
