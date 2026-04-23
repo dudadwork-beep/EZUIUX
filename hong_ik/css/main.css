@@ -2,9 +2,9 @@
 @import url(fonts.css);
 @import url(common.css);
 
-/* header 코딩 얼추 끝날때 미디어 쿼리로 pc버전 mo버전 나눠놓기 */
-@media screen and (min-width:1025px){ /*1025이상 pc버전*/
+/**!!!! mo버전 나눠놓기!!!*/
 /**************************header 시작***************************/
+@media screen and (min-width:1025px){ /*1025이상 pc버전*/
         .header{
             position: fixed;
             top: 0;
@@ -140,7 +140,6 @@
             align-items: center;
             font-size: 20px;
             text-align: center;
-            
         }
         .header .util .lang:hover > ul.lang_wrap{
             display: block;
@@ -152,7 +151,11 @@
             font-weight: 800;
             color: var(--font-color-p2);
         }
-}
+}/*//@media PC버전 끝*/
+
+ @media screen and (max-width:1024px){   /** MO 버전 : 내가 해야할거 메뉴 모바일 버전 만들기. 숨겨놨던 메뉴 나오게 하기. **/
+
+ }
 /**************************visual 시작 " 비디오도 브라우저 사이즈에 맞춰줄어들게 만들기!" ***************************/
 .visual {
     width: 100%;
