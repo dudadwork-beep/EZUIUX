@@ -154,7 +154,75 @@
 }/*//@media PC버전 끝*/
 
  @media screen and (max-width:1024px){   /** MO 버전 : 내가 해야할거 메뉴 모바일 버전 만들기. 숨겨놨던 메뉴 나오게 하기. **/
-
+        .header{
+            position: fixed;
+            width: 100%; /* 너비를 꽉 채움 */
+            height: clamp(56px, 9vw, 90px);
+            z-index: 100; /* 비디오보다 위에 오도록 높은 숫자 부여 */
+            border-bottom: 1px solid #ccc;
+        }
+        .header:hover{
+            display: none;
+        }
+        .header .wrapper{
+            display: flex;
+            height: 100%;
+        }
+        .header .gnb{
+            position: relative;
+            display: flex;
+            width: 100vw;
+            align-items: center;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
+        
+        .header .logo, .header:hover .logo{
+            display: none;
+        }
+        .header .gnb{
+        }
+        .header .gnb .gnb_wrap{
+            display: flex;
+            position: absolute;
+            top: auto;
+            left: 0;
+            border: 1px solid blue;
+            height: 56px;
+            align-items: center;
+            width: 100%;
+        }
+        .header .gnb .gnb_wrap .gnb_logo{
+            display: block; /*mo 버전*/
+            width: clamp(100px, 12vw, 128px);
+        }
+        .header .gnb .gnb_open{
+            display: block;
+            width: 25px;
+            height: 15px;
+            background: url(../images/common/menu_m_w.svg) no-repeat center center / contain;
+        }
+        .header .gnb .gnb_wrap ul.depth1{
+            display: block; /* 메뉴 잠시 숨겨놓음!*/
+            position: absolute;
+            top: 56px;
+            left: 0;
+            border: 1px solid gold;
+            line-height: 3;
+            width: 100%;
+        }
+        .header .gnb .gnb_wrap ul.depth1 > li > a{
+            display: block;
+            font-size: 18px;
+            font-weight: 800;
+            color: var(--font-color-1);
+        }
+        .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
+            display: none; /* 서브 메뉴 잠시 숨겨놓음!*/
+        }
+        .header .util{
+            display: none;
+        }
  }
 /**************************visual 시작 " 비디오도 브라우저 사이즈에 맞춰줄어들게 만들기!" ***************************/
 .visual {
