@@ -39,7 +39,7 @@
         .header .gnb .gnb_open{
             display: none;
         }
-        .header .gnb .gnb_wrap .gnb_logo{
+        .header .gnb .gnb_logo{
             display: none; /*mo버전 로고 가리기*/
         }
         .header .gnb .gnb_wrap ul.depth1{
@@ -154,74 +154,129 @@
 }/*//@media PC버전 끝*/
 
  @media screen and (max-width:1024px){   /** MO 버전 : 내가 해야할거 메뉴 모바일 버전 만들기. 숨겨놨던 메뉴 나오게 하기. **/
-        .header{
-            position: fixed;
-            width: 100%; /* 너비를 꽉 채움 */
-            height: clamp(56px, 9vw, 90px);
-            z-index: 100; /* 비디오보다 위에 오도록 높은 숫자 부여 */
-            border-bottom: 1px solid #ccc;
+         .header{
+            position: absolute;
+            height: 56px;
+            width: 100%;
+            z-index: 100;
         }
-        .header:hover{
+        .header.header.menu_open{
+            background-color: #fff;
+        }
+        .header .util{
             display: none;
         }
         .header .wrapper{
+            position: relative;
+            margin: 0;
             display: flex;
+            justify-content: space-between;
             height: 100%;
+            padding: 0 16px;
+            border-bottom: 1px solid #ccc;
         }
         .header .gnb{
             position: relative;
             display: flex;
-            width: 100vw;
-            align-items: center;
-            flex-direction: row-reverse;
             justify-content: space-between;
-        }
-        
-        .header .logo, .header:hover .logo{
-            display: none;
-        }
-        .header .gnb{
-        }
-        .header .gnb .gnb_wrap{
-            display: flex;
-            position: absolute;
-            top: auto;
-            left: 0;
-            border: 1px solid blue;
-            height: 56px;
             align-items: center;
             width: 100%;
-        }
-        .header .gnb .gnb_wrap .gnb_logo{
-            display: block; /*mo 버전*/
-            width: clamp(100px, 12vw, 128px);
+            flex-direction: row-reverse;
         }
         .header .gnb .gnb_open{
-            display: block;
-            width: 25px;
+            width: 20px;
             height: 15px;
             background: url(../images/common/menu_m_w.svg) no-repeat center center / contain;
         }
-        .header .gnb .gnb_wrap ul.depth1{
-            display: block; /* 메뉴 잠시 숨겨놓음!*/
-            position: absolute;
-            top: 56px;
-            left: 0;
-            border: 1px solid gold;
-            line-height: 3;
-            width: 100%;
+        .header.menu_open .gnb .gnb_open{
+            background-image: url(../images/common/menu_m.svg);
+            z-index: 50;
         }
-        .header .gnb .gnb_wrap ul.depth1 > li > a{
+        .header.menu_open .gnb .gnb_open .gnb_wrap{
             display: block;
+        }
+        .header .gnb .gnb_logo{
+            display: flex;
+            /* border: 1px solid blue; */
+            align-items: center;
+            width: 100vw;
+            height: 56px;
+        }
+        .header .gnb .gnb_logo a{
+            display: block;
+            width: clamp(100px, 12vw, 128px);
+            height: clamp(23px, 3vw, 30px);
+            background: url(../images/common/logo_w.svg) no-repeat center center / contain;
+            /* border: 1px solid red; */
+        }
+        .header.menu_open .gnb .gnb_logo a{
+            background-image: url(../images/common/logo.svg);
+        }
+        .header .gnb .gnb_wrap{
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            max-height: 100dvh;
+            /* background: #fff; */
+            z-index: 1;
+        }
+        .header .gnb .gnb_wrap ul.depth1{
+            margin-top: 56px;
+            display: none;/*잠시숨김*/
+            max-height: calc(100dvh - 56px);
+            overflow-y: auto;
+        }
+        .header .gnb .gnb_wrap ul.depth1 > li.open{
+            color: var(--font-color-1);
+            line-height: 305%;
             font-size: 18px;
             font-weight: 800;
-            color: var(--font-color-1);
+        }
+        .header .gnb .gnb_wrap ul.depth1 > li > a{
+            position: relative;
+            display: block;
+            padding: 0 16px;
+        }
+        .header .gnb .gnb_wrap ul.depth1 > li > a::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            border-top: 1px solid #ccc;
         }
         .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
-            display: none; /* 서브 메뉴 잠시 숨겨놓음!*/
+            display: block;
+            position: relative;
+            width: 100%;
         }
-        .header .util{
-            display: none;
+        .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            border-top: 1px solid #ccc;
+        }
+        .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li{
+            display: none;/*잠시숨김*/
+            line-height: 235%;
+            font-size: 16px;
+            font-weight: 400;
+            background-color: #F2F7FD;
+        }
+        .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a{
+            display: block;
+            padding: 0 16px;
+        }
+        .header .gnb .gnb_close{
+            position: absolute; /* gnb_wrap기준으로 정렬 */
+            right:0;
+            top: 36%;
+            background: url(../images/common/menu_close.svg) no-repeat center center / contain ;
+            width: 20px;
+            height: 15px;
         }
  }
 /**************************visual 시작 " 비디오도 브라우저 사이즈에 맞춰줄어들게 만들기!" ***************************/
@@ -254,45 +309,41 @@
     object-fit: cover; /* 비디오 비율 유지하며 꽉 채움 (매우 중요!) */
     z-index: -1; /* 텍스트보다 뒤로 보냄 */
 }
-.visual_progress {
+.visual .visual_progress {
     position: absolute;
     bottom: 50px;
     left: 12%; /* 메인 카피 정렬과 맞춤 */
     display: flex;
     gap: 5px;
     z-index: 10;
+    width: 259px;
 }
 
-.visual_progress .bar {
-    width: 83px; /* 바 길이 */
+.visual .visual_progress .swiper-pagination-bullet {
+    width: calc(33.3% - 3.33px); /* 바 길이 */
     height: 3px;
     background: rgba(255, 255, 255, 0.3); /* 차오르기 전 배경색 */
     position: relative;
     overflow: hidden;
     cursor: pointer;
+    border-radius: 0;
+    opacity: 1;
+    margin: 0;
+    display: block;
 }
 
-.visual_progress .bar span {
+.visual .visual_progress .swiper-pagination-bullet::before{
+    content: "";
     position: absolute;
     top: 0;
-    left: -100%; /* 처음에 왼쪽으로 숨김 */
-    width: 100%;
+    left: 0; /* 처음에 왼쪽으로 숨김 */
+    width: 0;
     height: 100%;
     background: #fff; /* 차오르는 색상 */
 }
-
-/* 활성화된 바에 애니메이션 적용 */
-.visual_progress .bar.active span {
-    left: 0;
-    transition: 5s linear; /* JS의 autoplay delay와 시간 일치시켜야 함 */
+.visual .visual_progress .swiper-pagination-bullet.swiper-pagination-bullet-active::before{
+    width: var(--visual-progress); /*★*/
 }
-
-/* 이미 지나간 바는 꽉 차있게 유지 */
-.visual_progress .bar.passed span {
-    left: 0;
-    transition: none;
-}
-
 .visual .visual_wrap .swiper .swiper-slide .txt{
     position: absolute;
     top: 80%;

@@ -18,12 +18,7 @@ body, html{
         margin: 0 30px; /* 이제 좌우여백이 고정으로 변경 */
     }
 }
-@media screen and (max-width: 768px){
-    .wrapper{
-        margin: 0 16px; /* 이제 좌우여백이 고정으로 변경 */
-    }
-}
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px){
     .wrapper{
         margin: 0 16px; /* 이제 좌우여백이 고정으로 변경 */
     }

@@ -18,19 +18,46 @@ $(document).ready(function(){
         device_chk()
     })
     $('.header .gnb_wrap ul.depth1 > li').on('mouseenter', function(){
-        $('.header .gnb_wrap ul.depth1 > li').removeClass('over')
-        $(this).addClass('over')
+        if(device_steus ==  'pc'){
+             $('.header .gnb_wrap ul.depth1 > li').removeClass('over')
+            $(this).addClass('over')
+        }
     })
      $('.header .gnb_wrap ul.depth1 > li').on('mouseleave', function(){
-        $('.header .gnb_wrap ul.depth1 > li').removeClass('over')
+        if(device_steus ==  'pc'){
+            $('.header .gnb_wrap ul.depth1 > li').removeClass('over')
+        }
     });
     $('.header .util .lang > ul.lang_wrap > li').on('mouseenter', function(){
-        $('.header .util .lang > ul.lang_wrap > li').removeClass('over')
-        $(this).addClass('over')
+        if(device_steus ==  'pc'){
+            $('.header .util .lang > ul.lang_wrap > li').removeClass('over')
+            $(this).addClass('over')
+        }
     })
      $('.header .util .lang > ul.lang_wrap > li').on('mouseleave', function(){
-        $('.header .util .lang > ul.lang_wrap > li').removeClass('over')
+        if(device_steus ==  'pc'){
+            $('.header .util .lang > ul.lang_wrap > li').removeClass('over')
+        }
     });
+/*** header menu***/
+    $('.header .gnb .gnb_wrap ul.depth1 > li').on('click', function(){
+        if($(this).hasClass('open') == true){
+            console.log('열림')
+            $(this).removeClass('open')
+        }else{
+            console.log('닫힘')
+            $('.header .gnb .gnb_wrap ul.depth1 > li').removeClass('open')
+            $(this).addClass('open')
+        }
+    })
+    $('.header .gnb .gnb_open').on('click', function(){
+        // console.log('열림') 이게 모바일 햄버거 메뉴 열고, 닫기
+        $('.header').addClass('menu_open')
+    })
+    $('.header .gnb .gnb_close').on('click', function(){
+        // console.log('닫힘')
+        $('.header').removeClass('menu_open')
+    })  
 /****************!!visual swiper!!**************** */
  var delayTime = 5000; // 전환 시간 (5초)
     var visual_swiper = new Swiper(".visual .swiper", {
@@ -41,51 +68,17 @@ $(document).ready(function(){
             delay: delayTime,
             disableOnInteraction: false,
         },
+        pagination: {
+            el: ".visual .visual_progress",
+            clickable: true
+        },
         on: {
-            init: function() {
-                // 초기 실행 시 첫 번째 바 활성화
-                updateProgress(0);
-            },
-            slideChange: function() {
-                // 실제 슬라이드 인덱스 계산 (loop 모드 고려)
-                updateProgress(this.realIndex);
-            },
-            slideChangeTransitionEnd: function () {
-                let activeSlide = this.slides[this.activeIndex];
-                let video = activeSlide.querySelector('video');
-                if (video) {
-                    video.play();
-                }
+            autoplayTimeLeft(s, time, progress) {
+                $('.visual .visual_progress .swiper-pagination-bullet').css('--visual-progress', 0); //★//
+                $('.visual .visual_progress .swiper-pagination-bullet.swiper-pagination-bullet-active').css('--visual-progress', 100 - (progress*100) + '%');
+                // progressCircle.style.setProperty("--progress", 1 - progress);
+                // progressContent.textContent = `${Math.ceil(time / 1000)}s`;
             }
         }
-    });
-
-    // 프로그레스 바 상태 업데이트 함수
-    function updateProgress(index) {
-        let bars = $('.visual_progress .bar');
-        
-        // 일단 모든 바의 클래스 초기화
-        bars.removeClass('active passed');
-        
-        // 현재 인덱스 이전 바들은 꽉 채우기 (passed)
-        bars.each(function(idx) {
-            if (idx < index) {
-                $(this).addClass('passed');
-            } else if (idx === index) {
-                // 현재 바 애니메이션 시작
-                // transition 초기화를 위해 잠깐 떼었다가 붙임
-                $(this).find('span').css('transition', 'none').css('left', '-100%');
-                setTimeout(() => {
-                    $(this).addClass('active');
-                    $(this).find('span').css('transition', `left ${delayTime}ms linear`).css('left', '0');
-                }, 10);
-            }
-        });
-    }
-
-    // 바 클릭 시 해당 슬라이드로 이동 (선택 사항)
-    $('.visual_progress .bar').on('click', function() {
-        var idx = $(this).index();
-        visual_swiper.slideToLoop(idx);
     });
 })
