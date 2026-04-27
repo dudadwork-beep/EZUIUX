@@ -156,51 +156,65 @@
  @media screen and (max-width:1024px){   /** MO 버전 : 내가 해야할거 메뉴 모바일 버전 만들기. 숨겨놨던 메뉴 나오게 하기. **/
          .header{
             position: absolute;
+            top: 0;
+            left: 0;
             height: 56px;
             width: 100%;
             z-index: 100;
+            border-bottom: 1px solid #ccc;
         }
-        .header.header.menu_open{
-            background-color: #fff;
+        .header .wrapper{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-right: 0;
+        }
+        .header .logo a{
+            display: block;
+            width: clamp(100px, 12vw, 128px);
+            height: clamp(23px, 3vw, 30px);
+            background: url(../images/common/logo_w.svg) no-repeat center center / contain;
         }
         .header .util{
             display: none;
         }
-        .header .wrapper{
-            position: relative;
-            margin: 0;
-            display: flex;
-            justify-content: space-between;
-            height: 100%;
-            padding: 0 16px;
-            border-bottom: 1px solid #ccc;
-        }
-        .header .gnb{
-            position: relative;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            width: 100%;
-            flex-direction: row-reverse;
+        .header .gnb {
+            height: 56px;
         }
         .header .gnb .gnb_open{
-            width: 20px;
-            height: 15px;
-            background: url(../images/common/menu_m_w.svg) no-repeat center center / contain;
+            width: 56px;
+            height: 56px;
+            background: url(../images/common/menu_m_w.svg) no-repeat center center;
         }
-        .header.menu_open .gnb .gnb_open{
-            background-image: url(../images/common/menu_m.svg);
-            z-index: 50;
+        .header .gnb .gnb_wrap{
+            display: none;
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100dvh;
+            width: 100vw;
         }
-        .header.menu_open .gnb .gnb_open .gnb_wrap{
+        .header .gnb .gnb_wrap::before{
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 60px;
+            background-color: #fff;
+            z-index: -1;
+        }
+        .header.menu_open .gnb .gnb_wrap{
             display: block;
         }
         .header .gnb .gnb_logo{
+            position: absolute;
             display: flex;
-            /* border: 1px solid blue; */
             align-items: center;
             width: 100vw;
             height: 56px;
+            top: 0;
+            left: 16px;
         }
         .header .gnb .gnb_logo a{
             display: block;
@@ -211,34 +225,48 @@
         }
         .header.menu_open .gnb .gnb_logo a{
             background-image: url(../images/common/logo.svg);
+            z-index: 2;
         }
-        .header .gnb .gnb_wrap{
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            max-height: 100dvh;
-            /* background: #fff; */
-            z-index: 1;
+        .header.menu_open .gnb .gnb_wrap{
+            display: block;
         }
         .header .gnb .gnb_wrap ul.depth1{
             margin-top: 56px;
-            display: none;/*잠시숨김*/
+            display: block;
             max-height: calc(100dvh - 56px);
             overflow-y: auto;
+            background-color: #fff;
         }
-        .header .gnb .gnb_wrap ul.depth1 > li.open{
+        .header .gnb .gnb_wrap ul.depth1 > li.menu_recruit {
+        border-bottom: 1px solid #ccc;
+        }
+        .header .gnb .gnb_wrap ul.depth1 > li.open ul.depth2{
+            display: block; /* li에 open 클래스 붙으면 보임 */
             color: var(--font-color-1);
             line-height: 305%;
-            font-size: 18px;
-            font-weight: 800;
         }
         .header .gnb .gnb_wrap ul.depth1 > li > a{
             position: relative;
             display: block;
-            padding: 0 16px;
+            padding: 16px;
+            font-size: 18px;
+            font-weight: 800;
         }
         .header .gnb .gnb_wrap ul.depth1 > li > a::after{
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='16' height='9' viewBox='0 0 16 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.00544 6.65311L14.207 0.322967C14.418 0.107656 14.6641 0.00358804 14.9453 0.0107654C15.2266 0.0179427 15.4727 0.129186 15.6836 0.344497C15.8945 0.559808 16 0.811005 16 1.09809C16 1.38517 15.8945 1.63636 15.6836 1.85167L9.20779 8.48325C9.03904 8.6555 8.8492 8.78469 8.63826 8.87081C8.42732 8.95694 8.21638 9 8.00544 9C7.79451 9 7.58357 8.95694 7.37263 8.87081C7.16169 8.78469 6.97185 8.6555 6.8031 8.48325L0.306201 1.85168C0.0952624 1.63636 -0.00669105 1.38158 0.000340223 1.08732C0.0073715 0.793063 0.116356 0.538279 0.327294 0.322968C0.538233 0.107656 0.784327 9.1939e-07 1.06558 9.07096e-07C1.34683 8.94803e-07 1.59292 0.107656 1.80386 0.322967L8.00544 6.65311Z' fill='%232E3138'/%3E%3C/svg%3E%0A");
+            width: 56px;
+            height: 56px;
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
+        .header .gnb .gnb_wrap ul.depth1 > li.open > a::after{
+            background-image: url("data:image/svg+xml,%3Csvg width='16' height='9' viewBox='0 0 16 9' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.00544 2.34689L14.207 8.67703C14.418 8.89234 14.6641 8.99641 14.9453 8.98923C15.2266 8.98206 15.4727 8.87081 15.6836 8.6555C15.8945 8.44019 16 8.189 16 7.90191C16 7.61483 15.8945 7.36364 15.6836 7.14833L9.20779 0.516747C9.03904 0.344498 8.8492 0.215311 8.63826 0.129187C8.42732 0.0430626 8.21638 3.5915e-07 8.00544 3.49929e-07C7.79451 3.40709e-07 7.58357 0.0430625 7.37263 0.129187C7.16169 0.215311 6.97185 0.344498 6.8031 0.516747L0.306201 7.14832C0.0952624 7.36364 -0.00669105 7.61842 0.000340223 7.91268C0.0073715 8.20694 0.116356 8.46172 0.327294 8.67703C0.538233 8.89234 0.784327 9 1.06558 9C1.34683 9 1.59292 8.89234 1.80386 8.67703L8.00544 2.34689Z' fill='%232E3138'/%3E%3C/svg%3E%0A");
+        }
+        .header .gnb .gnb_wrap ul.depth1 > li > a::before{
             content: "";
             position: absolute;
             top: 0;
@@ -247,9 +275,11 @@
             border-top: 1px solid #ccc;
         }
         .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2{
-            display: block;
+            display: none; /* 기본적으로 2차메뉴 닫아둠 */
             position: relative;
             width: 100%;
+            padding: 16px 0;/* 위아래만패딩*/
+            background-color: #F2F7FD;
         }
         .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2::after{
             content: "";
@@ -260,26 +290,34 @@
             border-top: 1px solid #ccc;
         }
         .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li{
-            display: none;/*잠시숨김*/
-            line-height: 235%;
-            font-size: 16px;
-            font-weight: 400;
-            background-color: #F2F7FD;
+            display: block;
         }
         .header .gnb .gnb_wrap ul.depth1 > li > ul.depth2 > li > a{
             display: block;
+            width: 100%;
+            font-size: 16px;
+            font-weight: 400;
+            line-height: 235%;
             padding: 0 16px;
+            box-sizing: border-box; /* 패딩이 너비에 포함되도록 설정 */
         }
         .header .gnb .gnb_close{
-            position: absolute; /* gnb_wrap기준으로 정렬 */
-            right:0;
-            top: 36%;
-            background: url(../images/common/menu_close.svg) no-repeat center center / contain ;
-            width: 20px;
-            height: 15px;
+            position: absolute;
+            right: 0;
+            top: 0;
+            background: url(../images/common/menu_close.svg) no-repeat center center;
+            width: 56px;
+            height: 56px;
+            z-index: 60;
+        }
+        .header.menu_open .gnb .gnb_close{
+            display: block; /* 메뉴 열리면 보임 */
+        }
+        .header.menu_open .gnb .gnb_open {
+            display: none;
         }
  }
-/**************************visual 시작 " 비디오도 브라우저 사이즈에 맞춰줄어들게 만들기!" ***************************/
+/**************************visual 시작 ***************************/
 .visual {
     width: 100%;
     height: 100vh;
@@ -309,7 +347,7 @@
     object-fit: cover; /* 비디오 비율 유지하며 꽉 채움 (매우 중요!) */
     z-index: -1; /* 텍스트보다 뒤로 보냄 */
 }
-.visual .visual_progress {
+.visual .visual_progress { /*★*/
     position: absolute;
     bottom: 50px;
     left: 12%; /* 메인 카피 정렬과 맞춤 */
@@ -349,7 +387,7 @@
     top: 80%;
     left: 12%;
     display: flex;
-    font-size: 17px;
+    font-size: clamp(16px, 1vw, 17px);
     color: #fff;
     justify-content: flex-start;
     flex-direction: column;
@@ -358,18 +396,145 @@
     margin-left: 1%;
 }
 .visual .visual_wrap .swiper .swiper-slide .txt > h3{
-    font-size: 75px;
+    font-size: clamp(40px, 7vw, 75px);
     font-family: var(--font-family-en);
     line-height: 1.3;
 }
 
-/**************************************/
-/*************************************/
-.txt_sect .strong{
-    font-size: 80px;
+@media screen and (max-width:768px){
+    .visual .visual_progress {
+        bottom: 70px;
+        left: 16px;
+    }
+    .visual .visual_wrap .swiper .swiper-slide .txt{
+        left: 16px;
+    }
+}
+@media screen and (max-width:478px){
+     .visual .visual_progress{
+        width: 227px;
+    }
+    .visual .visual_progres, .visual .visual_wrap .swiper .swiper-slide .txt{
+        left: 16px;
+    }
+}
+
+@media screen and (max-width:415px){
+     .visual .visual_wrap .swiper .swiper-slide .txt{
+        top: 75%;
+    }
+}
+@media screen and (max-width:414px){
+    .visual .visual_wrap .swiper .swiper-slide .txt{
+        top: 75%;
+        display: block;      /* 영역을 가집니다 */
+        line-height: 1.5;    /* 줄 간격 (적절히 조절 가능) */
+        height: 3em;         /* line-height(1.5) * 2줄 = 3em */
+        right: 16px;
+    }
+}
+/******************biz 시작!********************/
+.biz {
+    width: 100%;
+    overflow: hidden; /* 이 섹션 밖으로 나가는 건 다 숨김 */
+}
+.biz .tit{
+    margin-top: 161px;
+    text-align: center;
+}
+.biz .tit h2{
+    font-size: 75px;
+    font-family: var(--font-family-en);
+    line-height: var(--line-height-M);
+    color: var(--font-color-1);
+}
+.biz .list{
+    margin-top: 111px;
+}
+.biz .list .swiper {
+    padding: 83px 0;
+}
+.biz .list .swiper-wrapper{
+    align-items: center;
+}
+.biz .list .swiper-wrapper .swiper-slide {
+    width: 452px; 
+}
+.biz .list .swiper-wrapper .swiper-slide.swiper-slide-active{
+    /* transform: scale3d(1.36, 1.26, 1); */
+    width: 618px;
+    height: 800px;
+}
+.biz .list .swiper-wrapper .swiper-slide a{
+    position: relative;
+    display: block;
+}
+.biz .list .swiper-wrapper .swiper-slide .photo{
+    overflow: hidden;
+    border-radius: 10px;
+}
+.biz .list .swiper-wrapper .swiper-slide .photo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    vertical-align: top;
+}
+/* 텍스트를 이미지 위로 올리기 */
+.biz .list .swiper-wrapper .swiper-slide h3,
+.biz .list .swiper-wrapper .swiper-slide span {
+    position: absolute;
+    left: 24px;
+    right: 24px;
+    z-index: 10;
+    color: #fff; /* 이미지 위에서 잘 보이도록 흰색 */
+    text-align: center;
+    word-break: keep-all;
+}
+.biz .list .swiper-wrapper .swiper-slide h3{
+    top: 98px; /* 위치 조정 */
+    font-size: 45px;
     font-weight: 800;
 }
-.txt_sect .span{
-    font-size: 60px;
-    font-weight: 800;
+.biz .list .swiper-wrapper .swiper-slide span {
+    display: none;
+    top: 189px; /* 위치 조정 */
+    font-size: 16px;
+    opacity: 0.9;
+}
+.biz .list .swiper-wrapper .swiper-slide.swiper-slide-active span{
+    display: block;
+}
+.biz .list .swiper-wrapper .swiper-slide p{
+    display: none;
+    position: absolute;
+    bottom: 94px;
+    left: 44px;
+    font-size: 24px;
+    color: #fff;
+    padding: 5px 377px 11px 47px;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    /* 1. 배경 설정 (흐림 효과를 위해 반투명 권장) */
+    background-color: rgba(255, 255, 255, 0.2);
+    
+    /* 2. 배경 흐림 */
+    -webkit-backdrop-filter: blur(25px); /* 사파리용 */
+    backdrop-filter: blur(25px);         /* 표준(크롬, 엣지 등) */
+
+    /* 3. 그림자 합치기 (바깥쪽, 안쪽 순서 상관없음) */
+    box-shadow: 
+        7px 6px 14px rgba(0, 0, 0, 0.25),      /* Drop Shadow */
+        inset 2px 2px 6px rgba(255, 255, 255, 0.25); /* Inner Shadow */
+}
+.biz .list .swiper-wrapper .swiper-slide.swiper-slide-active p{
+    display: block;
+}
+/************!!!!!!!!!!집가서 위에 부터 !!!view more 부터 하기 ****************/
+/************************************/
+.txt_sect{
+    display: none;
+}
+/******************************/
+body{
+    margin-bottom: 1000px;
 }

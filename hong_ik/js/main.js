@@ -81,4 +81,27 @@ $(document).ready(function(){
             }
         }
     });
+/***************************!!biz swiper!!************************* */
+    const biz_swiper = new Swiper(".biz .swiper", {
+        slidesPerView: 'auto',
+        spaceBetween: 24,
+        centeredSlides: true,
+        loop: true,
+        on: {
+            slideChange: function() {
+                const activeSlide = this.slides[this.activeIndex]
+                const activeSlideWidth = activeSlide.offsetWidth
+                const otherSlides = this.slides[this.previousIndex]
+                const otherSlideWidth = otherSlides.offsetWidth			
+                const slideWidthDifference = activeSlideWidth - otherSlideWidth;
+                this.setTranslate(this.translate - slideWidthDifference);
+            },
+            slideChangeTransitionEnd: function() {
+                // 전환이 끝나면 Swiper를 다시 업데이트
+                setTimeout(() => {
+                    this.update();
+                }, 100);  // 잠시 딜레이를 주고 업데이트
+            }
+        },
+    });
 })
