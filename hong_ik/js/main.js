@@ -84,7 +84,7 @@ $(document).ready(function () {
     /***************************!!biz swiper!!************************* */
     const biz_swiper = new Swiper(".biz .swiper", {
         slidesPerView: 'auto',
-        spaceBetween: 24,
+        spaceBetween: 16,
         centeredSlides: true,
         loop: true,
         on: {
@@ -105,14 +105,95 @@ $(document).ready(function () {
         },
     });
     /****************************!!txt_sect swiper!!************************* */
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('active');
-            }
-        });
-    }, { threshold: 0.5 });
+    /**********************************
+     * message는 높이가 높고 그 안에 inner가 고정으로 있음 sticky
+     * message가 스크롤 되는 동안 p strong span태그가 넓이가 넓어지면서 색상 바뀜
+    ***********************************/
+    let color_obj = $('.message .txt_color strong')
+    let color_area = $('.message')
+    let color_resizer = 'span'
+    let color_line = color_obj.length //몇줄인지
+    let color_w //넓이
+    let color_header //header의 높이
+    let color_win_h //브라우저의 높이
 
-    // 모든 .fill_txt 요소에 감시자 붙이기
-    document.querySelectorAll('.fill_txt').forEach(el => observer.observe(el));
+    let color_start //색상을 변경하기 시작하는 위치
+    let color_end //색상 변경이 종료되는 위치
+    let color_total //색상 변경 전체 길이
+    let color_diff //색상이 변경되기 시작한 이후에 얼마나 스크롤 되었는지
+    let color_count //몇줄 완성하는지..
+
+    let scrolling //현재 스크롤 된값
+
+    //3번째 strong의 span 넓이 50%
+    //color_obj.eq(2).find(color_resizer).width('50%')
+
+    function color_change() {
+        scrolling = $(window).scrollTop()
+        color_win_h = $(window).height()
+        color_header = $('.header').height()
+
+        color_start = color_area.offset().top - color_header
+        color_end = color_area.offset().top + color_area.height() - color_win_h
+
+        if (color_end < scrolling) {
+            //console.log('끝')
+            color_obj.find(color_resizer).width('100%')
+        } else if (color_start > scrolling) {
+            // console.log('시작전')
+            color_obj.find(color_resizer).width('0')
+        } else {
+            color_total = color_end - color_start
+            color_diff = scrolling - color_start
+            color_count = color_diff / color_total * 100
+            // console.log(color_count)
+            for (i = 0; i < color_line; i++) {
+                color_w = (color_count - (100 / color_line) * i) * color_line
+                if (color_w > 100) {
+                    color_w = 100
+                }
+                color_obj.eq(i).find(color_resizer).width(color_w + '%')
+            }//for
+        }
+    }
+    color_change() //문서가 로딩되고 단 1번 실행
+    $(window).scroll(function () { //스크롤 될때마다 1번씩 실행
+        color_change()
+    });
+    /****************proj swiper************ */
+    const proj_swiper = new Swiper('.proj .swiper', { /* 팝업을 감싼는 요소의 class명 */
+        initialSlide: 2, // 0부터 시작 → 2 = 세번째 슬라이드
+        slidesPerView: 1, /* 한번에 보일 팝업의 수 - 모바일 제일 작은 사이즈일때 */
+        spaceBetween: 16, /* 팝업과 팝업 사이 여백 */
+        breakpoints: {
+            768: {    /* 640px 이상일때 적용 */
+                slidesPerView: 'auto',    /*    'auto'   라고 쓰면 css에서 적용한 넓이값이 적용됨 */
+                spaceBetween: 24,
+            },
+        },
+        //centeredSlides: true, /* 팝업을 화면에 가운데 정렬(가운데 1번이 옴) */
+        loop: true,  /* 마지막 팝업에서 첫번째 팝업으로 자연스럽게 넘기기 */
+        // autoplay: {  /* 팝업 자동 실행 */
+        //     delay: 2500,
+        //     disableOnInteraction: true,
+        // },
+        navigation: {
+            nextEl: '.proj-button-next',
+            prevEl: '.proj-button-prev',
+        },
+    });
+    /********!!txt_move!!******* */
+    window.addEventListener('DOMContentLoaded', () => {
+        const roller = document.querySelector('.moveroll');
+        const track = document.querySelector('.roll_track');
+
+        // 1. 기존 트랙을 복제합니다.
+        const clone = track.cloneNode(true);
+
+        // 2. 복제본에 'clone' 클래스를 추가해 구별할 수도 있습니다 (선택사항)
+        clone.classList.add('clone');
+
+        // 3. 부모인 moveroll 안에 복제본을 추가합니다.
+        roller.appendChild(clone);
+    });
 })
