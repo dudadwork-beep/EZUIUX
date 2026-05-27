@@ -1168,7 +1168,94 @@
     color: var(--font-color-p2);
     border: 1px solid var(--font-color-p2);
 }
-/******************************/
+/*******!!footer 시작*****/
+.footer{
+    padding: 76px 0 50px 0;
+    background-color: #13111F;
+}
+
+.footer .f_cont{
+    display: flex;
+    justify-content: space-between;
+}
+.footer .f_cont .f_left{
+    display: flex;
+    align-items: center;
+}
+.footer .f_cont .f_left .photo{
+    width: 225px;
+}
+.footer .f_cont .f_right{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+.footer .f_cont .f_right .f_nav ul{
+    display: flex;
+    justify-content: flex-end;
+    gap: 0 24px;
+    color: rgba(255, 255, 255, 0.8);
+}
+.footer .f_cont .f_right .f_nav li{
+    position: relative; /*li::after의 기준*/
+}
+.footer .f_cont .f_right .f_nav li::after{
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 72px;
+    width: 1px;
+    height: 14px;
+    background-color: #ccc;
+}
+.footer .f_cont .f_right .f_nav li:last-child::after{
+    display: none;
+}
+.footer .f_cont .f_right .f_nav li.imp{
+    font-weight: 800;
+}
+.footer .f_cont .f_right .f_nav li.imp::after{
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 132px; 
+    width: 1px;
+    height: 14px;
+    background-color: #ccc;
+}
+/* 본사와 지사 상자를 세로로 나열하고 우측 정렬 */
+.footer .f_cont .f_right .f_info {
+    margin-top: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; 
+    color: rgba(255, 255, 255, 0.8);
+}
+
+/* 각 행 내부 요소들(주소, Tel, Fax)을 가로로 정렬 */
+.footer .f_cont .f_right .f_info .f_span {
+    display: flex;
+    align-items: center;
+    gap: 0 20px; /* 주소와 Tel, Fax 사이의 가로 간격 */
+}
+
+/* address 태그가 줄바꿈되지 않고 한 줄로 흐르게 설정 */
+.footer .f_cont .f_right .f_info .f_span address {
+    display: flex;
+    align-items: center;
+    font-style: normal; 
+}
+.footer .f_cont .f_right .f_info .f_span address .txt_box {
+    display: inline-flex;          /* 내부 span 글자들을 가로 배치 */
+    justify-content: space-between; /* 상자 안에서 글자들을 양끝으로 균등 분배 */
+    width: 72px;                   /* 원하는 전체 타이틀 가로폭 고정 */
+    margin-right: 6px;
+}
+.footer .f_cont .copyright{
+    margin-top: 44px;
+}
+
+/******/
 body {
     margin-bottom: 1000px;
 }
