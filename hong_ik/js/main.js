@@ -196,4 +196,11 @@ $(document).ready(function () {
         // 3. 부모인 moveroll 안에 복제본을 추가합니다.
         roller.appendChild(clone);
     });
+    /***************!!top button!!**************/
+    $('.footer .top').on('click', function(){
+        // console.log('클릭')
+        $('html,body').animate({
+            scrollTop: 0
+        },500)
+    })
 })

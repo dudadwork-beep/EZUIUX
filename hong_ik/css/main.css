@@ -1172,8 +1172,21 @@
 .footer{
     padding: 76px 0 50px 0;
     background-color: #13111F;
+    position: relative; /*top의 정렬의 기준*/
 }
-
+.footer .top{
+    position: absolute;
+    width: 60px; /* 나중에 clamp 값주기*/
+    height: 60px;
+    /* 중앙에서 wrapper 절반만큼 가고, 버튼의 최대 크기(60px)만큼 안으로 당김 */
+    left: calc(50% + 642px - 60px);
+    top: -31px;
+    border-radius: 50px;
+    background: var(--color-point) url(../images/common/arrow_up_w.svg) no-repeat center center;
+}
+.footer .top:hover{
+    background-color: var(--font-color-p2);
+}
 .footer .f_cont{
     display: flex;
     justify-content: space-between;
