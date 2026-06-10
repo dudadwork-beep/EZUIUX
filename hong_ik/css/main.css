@@ -996,13 +996,15 @@
 }
 .news .list{
     padding-top: clamp(24px, 3vw, 34px);
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
 }
 .news .list .left{
     position: relative;
-    width: clamp(326px, 64vw, 642px);
+     width: 100%;
+    /* width: clamp(326px, 64vw, 642px); */
 }
 .news .left ul li {
     border-top: 1px solid rgba(255, 255, 255, 0.5); /* 위쪽 선 */
@@ -1032,7 +1034,6 @@
 .news .list .left ul li a .txt{
     display: flex;
     flex-direction: column;
-    width: clamp(273px,57px,572px);
 }
 .news .list .left ul li a .txt span{
     font-size: clamp(17px,2vw,24px);
@@ -1061,29 +1062,85 @@
 }
 .news .list .right .photo{
     padding-top: clamp(24px, 4vw, 44px);
-    width: clamp(324px, 51vw, 511px);
+    width: 100%;
     overflow: hidden;
     
 }
 .news .list .right .photo img{
+    width: clamp(324px, 51vw, 511px);
     object-fit: cover;
     vertical-align: bottom;
 }
 @media screen and (max-width:1024px){
     .news .list{
         display: flex;
+        width: 100%;
         justify-content: space-between;
         align-items: flex-end;
+    }
+    .news .list .left ul li a .txt{
+        width: 100%;
+    }
+    .news .list .right .photo{
+        padding-top: clamp(24px, 4vw, 44px);
+        width: 100%;
+    }
+    .news .list .right .photo img{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+}
+@media screen and (max-width:768px){
+    .news .list{
+        display: flex;
+        align-items: center;
+        flex-direction: column-reverse;
+    }
+    .news .list .left{
+        display: flex;
+        border: 1px solid red;
+    }
+    .news .list .left ul li {
+        border-top: 1px solid rgba(255, 255, 255, 0.5); /* 위쪽 선 */
+    }
+    .news .list .left ul li:last-child {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.5); /* 마지막 리스트의 아래쪽 선 */
+    }
+    .news .list .left ul li a{
+        position: relative;
+        display: block;
+        padding: clamp(24px, 3vw, 34px) clamp(3px, 4vw, 42px) clamp(24px, 3vw, 34px) clamp(2px,1vw,14px);
+    }
+    .news .list .left ul li a:hover, .news .list .left ul li a:hover::after{
+        display: none;
+    }
+
+    .news .list .left ul li a .txt{
+        display: flex;
+        flex-direction: column;
+        width: 100px;
+    }
+    .news .list .left ul li a .txt span{
+        font-size: clamp(17px,2vw,24px);
+        font-weight: 800;
+        line-height: 1.3;
+        white-space: nowrap;
+        overflow: hidden; /* 넘치는 글자 숨기기 */
+        text-overflow: ellipsis; /* 드디어 ... 등장! */
+    }
+    .news .list .right{
+        border: 1px solid yellow;
     }
 }
 /************!!!news 반응형아직 안함!!!**************/
 /***************!!!txt_move 시작!!!**************/
 .txt_move {
+    display: none;/*임시로 넌 처리함 flex ★*/
     width: 100%;
     margin: 80px 0;
     overflow: hidden; /* 넘치는 글자 숨기기 */
     background-color: #fff; /* 배경색은 상황에 맞게 조절 */
-    display: flex;
     padding: 10px 0; 
 }
 .txt_move .moveroll {
@@ -1124,7 +1181,7 @@
 .connect{
     margin: 0;
     width: 100%;
-    display: flex;
+    display: none;/*임시로 넌 처리함 flex ★*/
     align-items: center;
     flex-direction: column;
     position: relative;
@@ -1189,25 +1246,27 @@
 }
 /*******!!footer 시작*****/
 .footer{
+    display: none;/*임시로 넌 처리함 flex ★*/
     padding: 76px 0 50px 0;
     background-color: #13111F;
     position: relative; /*top의 정렬의 기준*/
 }
-/* .footer .top{
+.footer .top{
     position: absolute;
-    width: 60px; /* 나중에 clamp 값주기
+    width: 60px; /* 나중에 clamp 값주기 */
     height: 60px;
-    중앙에서 wrapper 절반만큼 가고, 버튼의 최대 크기(60px)만큼 안으로 당김
+    /*중앙에서 wrapper 절반만큼 가고, 버튼의 최대 크기(60px)만큼 안으로 당김*/
     left: calc(50% + 642px - 60px);
     top: -31px;
     border-radius: 50px;
     background: var(--color-point) url(../images/common/arrow_up_w.svg) no-repeat center center;
-} */
+}
 .footer .top:hover{
+    display: none;/*임시로 넌 처리함 flex*/
     background-color: var(--font-color-p2);
 }
 .footer .f_cont{
-    display: flex;
+    display: none;/*임시로 넌 처리함 flex*/
     justify-content: space-between;
 }
 .footer .f_cont .f_left{
